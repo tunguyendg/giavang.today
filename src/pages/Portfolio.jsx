@@ -1,0 +1,421 @@
+import { useEffect, useMemo, useState } from 'react';
+import { Plus, Trash2, WalletCards } from 'lucide-react';
+import { API_URL } from '../config/api.js';
+
+import {
+  TYPES,
+  getPrice,
+  normalizeOne,
+} from '../services/goldApi.js';
+
+const options = TYPES.filter(([code]) => code !== 'XAUUSD');
+
+const vi = (number) =>
+  new Intl.NumberFormat('vi-VN').format(
+    Number(number || 0)
+  );
+
+export default function Portfolio() {
+  const [items, setItems] = useState([]);
+  const [prices, setPrices] = useState({});
+
+  const [form, setForm] = useState({
+    type: 'SJL1L10',
+    qty: '1',
+    cost: '140000000',
+  });
+
+  useEffect(() => {
+    async function loadPortfolio() {
+      try {
+        const token = localStorage.getItem('giavang_token');
+
+        if (!token) {
+
+          return;
+        }
+
+        const response = await fetch(
+          `${API_URL}/api/portfolio`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          console.error(
+            'Load portfolio failed:',
+            data.message
+          );
+          return;
+        }
+
+        setItems(data.items);
+      } catch (error) {
+        console.error(
+          'Load portfolio error:',
+          error
+        );
+      }
+    }
+
+    loadPortfolio();
+  }, []);
+
+  useEffect(() => {
+    async function loadPrices() {
+      const arr = await Promise.all(
+        options.map(([code]) =>
+          getPrice(code)
+            .then((response) => [
+              code,
+              normalizeOne(response, code),
+            ])
+            .catch(() => [code, null])
+        )
+      );
+
+      setPrices(Object.fromEntries(arr));
+    }
+
+    loadPrices();
+
+    const interval = setInterval(() => {
+      loadPrices();
+    }, 5 * 60 * 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const totals = useMemo(() => {
+    return items.reduce(
+      (acc, item) => {
+        const currentPrice =
+          prices[item.type]?.buy || 0;
+
+        const quantity = Number(item.qty);
+        const buyPrice = Number(item.cost);
+
+        const value = currentPrice * quantity;
+        const cost = buyPrice * quantity;
+
+        acc.value += value;
+        acc.cost += cost;
+
+        return acc;
+      },
+      {
+        value: 0,
+        cost: 0,
+      }
+    );
+  }, [items, prices]);
+
+  const pnl = totals.value - totals.cost;
+
+  const pct =
+    totals.cost > 0
+      ? (pnl / totals.cost) * 100
+      : 0;
+
+  async function add(e) {
+    e.preventDefault();
+
+    try {
+      const token = localStorage.getItem('giavang_token');
+
+      if (!token) {
+        alert('Vui lòng đăng nhập trước.');
+        return;
+      }
+
+      const response = await fetch(
+        `${API_URL}/api/portfolio`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            type: form.type,
+            qty: Number(form.qty),
+            cost: Number(form.cost),
+          }),
+        }
+      );
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        alert(
+          data.message ||
+            'Không thể thêm vàng vào danh mục.'
+        );
+        return;
+      }
+
+      setItems((currentItems) => [
+        ...currentItems,
+        data.item,
+      ]);
+    } catch (error) {
+      console.error('Add portfolio error:', error);
+
+      alert(
+        'Không thể kết nối đến hệ thống. Vui lòng thử lại.'
+      );
+    }
+  }
+
+  async function removeItem(id) {
+    try {
+      const token = localStorage.getItem('giavang_token');
+
+      if (!token) {
+        alert('Vui lòng đăng nhập trước.');
+        return;
+      }
+
+      const response = await fetch(
+        `${API_URL}/api/portfolio/${id}`,
+        {
+          method: 'DELETE',
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        alert(
+          data.message ||
+            'Không thể xóa vàng khỏi danh mục.'
+        );
+        return;
+      }
+
+      setItems((currentItems) =>
+        currentItems.filter(
+          (item) => item._id !== id
+        )
+      );
+    } catch (error) {
+      console.error('Delete portfolio error:', error);
+
+      alert(
+        'Không thể kết nối đến hệ thống. Vui lòng thử lại.'
+      );
+    }
+  }
+
+  return (
+    <section className="container page-stack">
+      <div className="page-title">
+        <div>
+          <span className="eyebrow">
+            DANH MỤC CÁ NHÂN
+          </span>
+
+          <h1>Vàng của tôi</h1>
+
+          <p>
+            Theo dõi giá trị danh mục vàng và lãi/lỗ
+            theo giá thị trường hiện tại.
+          </p>
+        </div>
+      </div>
+
+      <div className="summary-grid">
+        <div className="summary-card">
+          <span>Giá trị hiện tại</span>
+          <strong>{vi(totals.value)}₫</strong>
+        </div>
+
+        <div className="summary-card">
+          <span>Tổng vốn</span>
+          <strong>{vi(totals.cost)}₫</strong>
+        </div>
+
+        <div
+          className={`summary-card ${
+            pnl >= 0 ? 'profit' : 'loss'
+          }`}
+        >
+          <span>Lãi / lỗ</span>
+
+          <strong>
+            {pnl >= 0 ? '+' : ''}
+            {vi(pnl)}₫
+          </strong>
+
+          <small>
+            {pct >= 0 ? '+' : ''}
+            {pct.toFixed(2)}%
+          </small>
+        </div>
+      </div>
+
+      <p className="muted">
+        Giá trị hiện tại được ước tính theo giá mua vào
+        của từng loại vàng.
+      </p>
+
+      <div className="two-col">
+        <div className="section-card">
+          <div className="section-head">
+            <div>
+              <span className="eyebrow">TÀI SẢN</span>
+              <h2>Danh mục</h2>
+            </div>
+          </div>
+
+          {items.length === 0 ? (
+            <div className="empty-state">
+              <WalletCards size={38} />
+              <h3>Chưa có vàng</h3>
+              <p>
+                Thêm giao dịch đầu tiên để bắt đầu tính lãi/lỗ.
+              </p>
+            </div>
+          ) : (
+            <div className="holdings">
+              {items.map((item) => {
+                const currentPrice =
+                  prices[item.type]?.buy || 0;
+
+                const quantity = Number(item.qty);
+                const buyPrice = Number(item.cost);
+                const cost = buyPrice * quantity;
+                const value = currentPrice * quantity;
+                const delta = value - cost;
+
+                const deltaPct =
+                  cost > 0
+                    ? (delta / cost) * 100
+                    : 0;
+
+                const goldName =
+                  options.find(
+                    ([code]) => code === item.type
+                  )?.[1];
+
+                return (
+                  <div
+                    className="holding"
+                    key={item._id || item.id}
+                  >
+                    <div>
+                      <strong>{goldName}</strong>
+
+                      <small>
+                        {quantity} lượng · vốn {vi(buyPrice)}₫/lượng
+                      </small>
+
+                      <small>
+                        Giá hiện tại {vi(currentPrice)}₫/lượng
+                      </small>
+                    </div>
+
+                    <div>
+                      <strong>{vi(value)}₫</strong>
+
+                      <small
+                        className={
+                          delta >= 0 ? 'green' : 'red'
+                        }
+                      >
+                        {delta >= 0 ? '+' : ''}
+                        {vi(delta)}₫ ·{' '}
+                        {deltaPct >= 0 ? '+' : ''}
+                        {deltaPct.toFixed(2)}%
+                      </small>
+                    </div>
+
+                    <button
+                      type="button"
+                      className="icon-btn danger"
+                      aria-label="Xóa khỏi danh mục"
+                      onClick={() =>
+                        removeItem(item._id)
+                      }
+                    >
+                      <Trash2 size={17} />
+                    </button>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </div>
+
+        <form
+          className="section-card form-card"
+          onSubmit={add}
+        >
+          <span className="eyebrow">THÊM VÀNG</span>
+          <h2>Thêm vào danh mục</h2>
+
+          <label>
+            Loại vàng
+            <select
+              value={form.type}
+              onChange={(e) =>
+                setForm({
+                  ...form,
+                  type: e.target.value,
+                })
+              }
+            >
+              {options.map(([code, name]) => (
+                <option key={code} value={code}>
+                  {name}
+                </option>
+              ))}
+            </select>
+          </label>
+
+          <label>
+            Số lượng (lượng)
+            <input
+              type="number"
+              step="0.1"
+              value={form.qty}
+              onChange={(e) =>
+                setForm({
+                  ...form,
+                  qty: e.target.value,
+                })
+              }
+            />
+          </label>
+
+          <label>
+            Giá mua / lượng
+            <input
+              type="number"
+              value={form.cost}
+              onChange={(e) =>
+                setForm({
+                  ...form,
+                  cost: e.target.value,
+                })
+              }
+            />
+          </label>
+
+          <button className="primary-btn">
+            <Plus size={17} />
+            Thêm vàng
+          </button>
+        </form>
+      </div>
+    </section>
+  );
+}
