@@ -1,8 +1,13 @@
+.env
+.env.*
+!.env.example
+
+server/.env
+server/.env.*
+!server/.env.example
+
 node_modules
 server/node_modules
-
-.env
-server/.env
 
 dist
 server/dist

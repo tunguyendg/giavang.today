@@ -38,7 +38,28 @@ webpush.setVapidDetails(
   process.env.VAPID_PRIVATE_KEY
 );
 
-app.use(cors());
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://giavang.today",
+  "https://www.giavang.today",
+];
+
+app.use(
+  cors({
+    origin(origin, callback) {
+      if (
+        !origin ||
+        allowedOrigins.includes(origin)
+      ) {
+        return callback(null, true);
+      }
+
+      return callback(
+        new Error("Origin not allowed by CORS")
+      );
+    },
+  })
+);
 app.use(express.json());
 
 app.use("/api/gold", goldRoutes);
@@ -72,9 +93,9 @@ async function checkAlert() {
       const isTriggered =
         alert.condition === "below"
           ? currentPrice <=
-            alert.targetPrice
+          alert.targetPrice
           : currentPrice >=
-            alert.targetPrice;
+          alert.targetPrice;
 
       console.log(
         "Checking alert:",
@@ -113,18 +134,17 @@ async function checkAlert() {
         JSON.stringify({
           title:
             "🔔 giavang.today",
-          body: `${
-            priceData.name
-          } hiện là ${currentPrice.toLocaleString(
-            "vi-VN"
-          )}đ/lượng`,
+          body: `${priceData.name
+            } hiện là ${currentPrice.toLocaleString(
+              "vi-VN"
+            )}đ/lượng`,
         });
 
       let sentSuccessfully = false;
 
       for (
         const subscription of
-          subscriptions
+        subscriptions
       ) {
         try {
           await webpush.sendNotification(
@@ -261,7 +281,7 @@ app.post(
 
       for (
         const subscription of
-          subscriptions
+        subscriptions
       ) {
         try {
           await webpush.sendNotification(
