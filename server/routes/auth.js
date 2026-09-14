@@ -120,8 +120,11 @@ router.post("/register", async (req, res) => {
             verificationExpires,
         });
 
+        const frontendUrl =
+            process.env.FRONTEND_URL || "http://localhost:5173";
+
         const verificationUrl =
-            `http://localhost:5173/verify-email?token=${rawVerificationToken}`;
+            `${frontendUrl}/verify-email?token=${rawVerificationToken}`;
 
         await sendVerificationEmail({
             to: user.email,
