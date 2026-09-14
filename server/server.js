@@ -247,114 +247,96 @@ app.get("/", (req, res) => {
   });
 });
 
-app.post(
-  "/api/push/test",
-  authMiddleware,
-  async (req, res) => {
-    try {
-      const subscriptions =
-        await PushSubscription.find({
-          userId:
-            req.user.userId,
-        });
+if (process.env.NODE_ENV !== "production") {
+  app.post(
+    "/api/push/test",
+    authMiddleware,
+    async (req, res) => {
+      try {
+        const subscriptions =
+          await PushSubscription.find({
+            userId: req.user.userId,
+          });
 
-      if (
-        subscriptions.length === 0
-      ) {
-        return res
-          .status(400)
-          .json({
+        if (subscriptions.length === 0) {
+          return res.status(400).json({
             message:
               "Tài khoản này chưa có Push Subscription",
           });
-      }
+        }
 
-      const payload =
-        JSON.stringify({
-          title:
-            "🔔 giavang.today",
-          body:
-            "Test Web Push thành công!",
+        const payload = JSON.stringify({
+          title: "🔔 giavang.today",
+          body: "Test Web Push thành công!",
         });
 
-      let sentCount = 0;
+        let sentCount = 0;
 
-      for (
-        const subscription of
-        subscriptions
-      ) {
-        try {
-          await webpush.sendNotification(
-            {
-              endpoint:
-                subscription.endpoint,
-              keys: {
-                p256dh:
-                  subscription.keys
-                    .p256dh,
-                auth:
-                  subscription.keys.auth,
-              },
-            },
-            payload
-          );
-
-          sentCount++;
-        } catch (error) {
-          console.error(
-            "Test push error:",
-            subscription._id,
-            error
-          );
-
-          if (
-            error.statusCode === 404 ||
-            error.statusCode === 410
-          ) {
-            await PushSubscription.deleteOne(
+        for (const subscription of subscriptions) {
+          try {
+            await webpush.sendNotification(
               {
-                _id:
-                  subscription._id,
-              }
+                endpoint: subscription.endpoint,
+                keys: {
+                  p256dh:
+                    subscription.keys.p256dh,
+                  auth:
+                    subscription.keys.auth,
+                },
+              },
+              payload
             );
+
+            sentCount++;
+          } catch (error) {
+            console.error(
+              "Test push error:",
+              subscription._id,
+              error
+            );
+
+            if (
+              error.statusCode === 404 ||
+              error.statusCode === 410
+            ) {
+              await PushSubscription.deleteOne({
+                _id: subscription._id,
+              });
+            }
           }
         }
-      }
 
-      if (sentCount === 0) {
-        return res
-          .status(500)
-          .json({
+        if (sentCount === 0) {
+          return res.status(500).json({
             message:
               "Không thể gửi Push Notification",
           });
-      }
+        }
 
-      console.log(
-        "Test push sent to user:",
-        req.user.userId,
-        "devices:",
-        sentCount
-      );
+        console.log(
+          "Test push sent to user:",
+          req.user.userId,
+          "devices:",
+          sentCount
+        );
 
-      res.json({
-        message: "Push sent",
-        sentCount,
-      });
-    } catch (error) {
-      console.error(
-        "Push test error:",
-        error
-      );
+        res.json({
+          message: "Push sent",
+          sentCount,
+        });
+      } catch (error) {
+        console.error(
+          "Push test error:",
+          error
+        );
 
-      res
-        .status(500)
-        .json({
+        res.status(500).json({
           message: "Push failed",
         });
+      }
     }
-  }
-);
+  );
+}
 
 const PORT =
   process.env.PORT || 3000;

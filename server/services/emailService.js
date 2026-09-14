@@ -8,7 +8,7 @@ async function sendVerificationEmail({
   verificationUrl,
 }) {
   const { data, error } = await resend.emails.send({
-    from: "onboarding@resend.dev",
+    from: "giavang.today <noreply@giavang.today>",
     to,
     subject: "Xác nhận tài khoản giavang.today",
     html: `
