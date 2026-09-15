@@ -3,6 +3,7 @@ const cron = require("node-cron");
 const express = require("express");
 const cors = require("cors");
 const webpush = require("web-push");
+const rateLimit = require("express-rate-limit");
 
 require("dotenv").config();
 
@@ -61,6 +62,18 @@ app.use(
   })
 );
 app.use(express.json());
+
+const apiLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  limit: 300,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: {
+    message: "Bạn gửi quá nhiều request. Vui lòng thử lại sau.",
+  },
+});
+
+app.use("/api", apiLimiter);
 
 app.use("/api/gold", goldRoutes);
 app.use("/api/auth", authRoutes);
