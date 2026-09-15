@@ -40,6 +40,7 @@ export default function Layout({ children }) {
         localStorage.getItem('giavang_token');
 
       if (!token) {
+        setUser(null);
         return;
       }
 
@@ -71,6 +72,18 @@ export default function Layout({ children }) {
     }
 
     loadCurrentUser();
+
+    window.addEventListener(
+      'auth-changed',
+      loadCurrentUser
+    );
+
+    return () => {
+      window.removeEventListener(
+        'auth-changed',
+        loadCurrentUser
+      );
+    };
   }, []);
 
   function handleLogout() {
