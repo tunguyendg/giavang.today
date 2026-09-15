@@ -46,6 +46,45 @@ router.post("/", authMiddleware, async (req, res) => {
   }
 });
 
+router.put("/:id", authMiddleware, async (req, res) => {
+  try {
+    const { type, qty, cost } = req.body;
+
+    const item = await Portfolio.findOneAndUpdate(
+      {
+        _id: req.params.id,
+        userId: req.user.userId,
+      },
+      {
+        type,
+        qty,
+        cost,
+      },
+      {
+        new: true,
+        runValidators: true,
+      }
+    );
+
+    if (!item) {
+      return res.status(404).json({
+        message: "Không tìm thấy portfolio item",
+      });
+    }
+
+    res.json({
+      message: "Đã cập nhật portfolio item",
+      item,
+    });
+  } catch (error) {
+    console.error("Update portfolio error:", error);
+
+    res.status(500).json({
+      message: "Không thể cập nhật portfolio item",
+    });
+  }
+});
+
 router.delete("/:id", authMiddleware, async (req, res) => {
   try {
     const item = await Portfolio.findOneAndDelete({
