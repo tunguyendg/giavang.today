@@ -351,6 +351,24 @@ if (process.env.NODE_ENV !== "production") {
   );
 }
 
+
+app.use((req, res) => {
+  res.status(404).json({
+    message: "Không tìm thấy API endpoint",
+  });
+});
+
+app.use((error, req, res, next) => {
+  console.error("Unhandled error:", error);
+
+  res.status(500).json({
+    message:
+      process.env.NODE_ENV === "production"
+        ? "Đã xảy ra lỗi hệ thống"
+        : error.message,
+  });
+});
+
 const PORT =
   process.env.PORT || 3000;
 
