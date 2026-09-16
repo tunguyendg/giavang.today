@@ -260,6 +260,15 @@ app.get("/", (req, res) => {
   });
 });
 
+app.get("/health", (req, res) => {
+  res.json({
+    status: "ok",
+    service: "giavang.today API",
+    uptime: process.uptime(),
+    timestamp: new Date().toISOString(),
+  });
+});
+
 if (process.env.NODE_ENV !== "production") {
   app.post(
     "/api/push/test",
