@@ -13,3 +13,5 @@ dist
 server/dist
 
 .DS_Store
+# Deployment artifacts
+giavang-frontend.tar.gz
