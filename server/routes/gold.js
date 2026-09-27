@@ -2,6 +2,57 @@ const express = require("express");
 const router = express.Router();
 
 const goldProvider = require("../services/goldProvider");
+const {
+  getUsdVndRate,
+} = require("../services/fxProvider");
+
+const {
+  convertWorldGoldToVndPerLuong,
+  calculatePremium,
+} = require("../services/goldConverter");
+
+router.get("/world-conversion", async (req, res, next) => {
+  try {
+    const worldGold =
+      await goldProvider.getPrice("XAUUSD");
+
+    const sjc =
+      await goldProvider.getPrice("SJL1L10");
+    const fx = await getUsdVndRate();
+
+    const xauUsd = Number(worldGold.buy || 0);
+    const usdVnd = Number(fx.sell || 0);
+    const sjcSell = Number(sjc.sell || 0);
+
+    const worldVndPerLuong =
+      convertWorldGoldToVndPerLuong(
+        xauUsd,
+        usdVnd
+      );
+
+    const premiumData =
+      calculatePremium(
+        sjcSell,
+        worldVndPerLuong
+      );
+
+    return res.status(200).json({
+      success: true,
+      data: {
+        xauUsd,
+        usdVnd,
+        worldVndPerLuong,
+        sjcSell,
+        premium: premiumData.premium,
+        premiumPercent:
+          premiumData.premiumPercent,
+        fxSource: fx.source,
+      },
+    });
+  } catch (error) {
+    next(error);
+  }
+});
 
 router.get("/", async (req, res) => {
   try {
@@ -47,5 +98,6 @@ router.get("/:type/history", async (req, res) => {
     });
   }
 });
+
 
 module.exports = router;

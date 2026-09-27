@@ -11,6 +11,7 @@ const portfolioRoutes = require("./routes/portfolio");
 const alertRoutes = require("./routes/alerts");
 const pushRoutes = require("./routes/push");
 const goldRoutes = require("./routes/gold");
+const fxRoutes = require("./routes/fx");
 
 const PushSubscription = require(
   "./models/PushSubscription"
@@ -108,6 +109,7 @@ app.use("/api", apiLimiter);
 ========================= */
 
 app.use("/api/gold", goldRoutes);
+app.use("/api/fx", fxRoutes);
 
 app.use(
   "/api/auth",

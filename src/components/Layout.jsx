@@ -487,6 +487,10 @@ export default function Layout({ children }) {
               API giá vàng
             </Link>
 
+            <Link to="/quy-doi-gia-vang-the-gioi">
+              Quy đổi vàng thế giới
+            </Link>
+
             <Link to="/portfolio">
               Vàng của tôi
             </Link>

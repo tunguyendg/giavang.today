@@ -9,6 +9,7 @@ import Telegram from './pages/Telegram.jsx';
 import VerifyEmail from './pages/VerifyEmail.jsx';
 import Account from './pages/Account.jsx';
 import GoldDetail from './pages/GoldDetail.jsx';
+import WorldGoldConverter from "./pages/WorldGoldConverter";
 
 export default function App() {
   return (
@@ -23,6 +24,10 @@ export default function App() {
         <Route path="/verify-email" element={<VerifyEmail />} />
         <Route path="/account" element={<Account />} />
         <Route path="/:slug" element={<GoldDetail />} />
+        <Route
+          path="/quy-doi-gia-vang-the-gioi"
+          element={<WorldGoldConverter />}
+        />
       </Routes>
     </Layout>
   );
