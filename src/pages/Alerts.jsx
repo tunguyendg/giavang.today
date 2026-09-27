@@ -16,6 +16,7 @@ import {
 import {
   API_URL,
 } from '../config/api.js';
+import Seo from '../seo/Seo.jsx';
 
 const options = TYPES.filter(
   ([code]) => code !== 'XAUUSD'
@@ -318,270 +319,279 @@ export default function Alerts() {
   }
 
   return (
-    <section className="container page-stack">
-      <div className="page-title">
-        <div>
-          <span className="eyebrow">
-            WEB PUSH
-          </span>
+    <>
+      <Seo
+        title="Cảnh báo giá vàng"
+        description="Quản lý cảnh báo giá vàng cá nhân trên giavang.today."
+        path="/alerts"
+        noindex
+      />
 
-          <h1>
-            Cảnh báo giá vàng
-          </h1>
+      <section className="container page-stack">
+        <div className="page-title">
+          <div>
+            <span className="eyebrow">
+              WEB PUSH
+            </span>
 
-          <p>
-            Theo dõi giá vàng và nhận
-            thông báo khi giá chạm mức
-            bạn quan tâm.
-          </p>
-        </div>
-      </div>
+            <h1>
+              Cảnh báo giá vàng
+            </h1>
 
-      <div className="two-col">
-        <form
-          className="section-card form-card"
-          onSubmit={submit}
-        >
-          <span className="eyebrow">
-            TẠO CẢNH BÁO
-          </span>
-
-          <h2>
-            Báo khi giá chạm ngưỡng
-          </h2>
-
-          <label>
-            Loại vàng
-
-            <select
-              value={form.type}
-              onChange={(e) =>
-                setForm({
-                  ...form,
-                  type:
-                    e.target.value,
-                })
-              }
-            >
-              {options.map(
-                ([code, name]) => (
-                  <option
-                    key={code}
-                    value={code}
-                  >
-                    {name}
-                  </option>
-                )
-              )}
-            </select>
-          </label>
-
-          <label>
-            Điều kiện
-
-            <select
-              value={
-                form.condition
-              }
-              onChange={(e) =>
-                setForm({
-                  ...form,
-                  condition:
-                    e.target.value,
-                })
-              }
-            >
-              <option value="below">
-                Giảm xuống ≤
-              </option>
-
-              <option value="above">
-                Tăng lên ≥
-              </option>
-            </select>
-          </label>
-
-          <label>
-            Mức giá
-
-            <input
-              type="text"
-              inputMode="numeric"
-              required
-              value={
-                form.target
-                  ? vi(
-                    form.target
-                  )
-                  : ''
-              }
-              onChange={(e) => {
-                const rawValue =
-                  e.target.value.replace(
-                    /\D/g,
-                    ''
-                  );
-
-                setForm({
-                  ...form,
-                  target:
-                    rawValue,
-                });
-              }}
-            />
-          </label>
-
-          <button
-            className="primary-btn"
-            type="submit"
-          >
-            <BellRing
-              size={17}
-            />
-
-            Tạo cảnh báo
-          </button>
-
-          {done && (
-            <div className="success-box">
-              <CheckCircle2
-                size={18}
-              />
-
-              Cảnh báo đã được
-              tạo thành công.
-            </div>
-          )}
-        </form>
-
-        <div className="section-card">
-          <div className="section-head">
-            <div>
-              <span className="eyebrow">
-                ĐANG THEO DÕI
-              </span>
-
-              <h2>
-                Cảnh báo của tôi
-              </h2>
-            </div>
+            <p>
+              Theo dõi giá vàng và nhận
+              thông báo khi giá chạm mức
+              bạn quan tâm.
+            </p>
           </div>
+        </div>
 
-          {alerts.length === 0 ? (
-            <div className="empty-state">
+        <div className="two-col">
+          <form
+            className="section-card form-card"
+            onSubmit={submit}
+          >
+            <span className="eyebrow">
+              TẠO CẢNH BÁO
+            </span>
+
+            <h2>
+              Báo khi giá chạm ngưỡng
+            </h2>
+
+            <label>
+              Loại vàng
+
+              <select
+                value={form.type}
+                onChange={(e) =>
+                  setForm({
+                    ...form,
+                    type:
+                      e.target.value,
+                  })
+                }
+              >
+                {options.map(
+                  ([code, name]) => (
+                    <option
+                      key={code}
+                      value={code}
+                    >
+                      {name}
+                    </option>
+                  )
+                )}
+              </select>
+            </label>
+
+            <label>
+              Điều kiện
+
+              <select
+                value={
+                  form.condition
+                }
+                onChange={(e) =>
+                  setForm({
+                    ...form,
+                    condition:
+                      e.target.value,
+                  })
+                }
+              >
+                <option value="below">
+                  Giảm xuống ≤
+                </option>
+
+                <option value="above">
+                  Tăng lên ≥
+                </option>
+              </select>
+            </label>
+
+            <label>
+              Mức giá
+
+              <input
+                type="text"
+                inputMode="numeric"
+                required
+                value={
+                  form.target
+                    ? vi(
+                      form.target
+                    )
+                    : ''
+                }
+                onChange={(e) => {
+                  const rawValue =
+                    e.target.value.replace(
+                      /\D/g,
+                      ''
+                    );
+
+                  setForm({
+                    ...form,
+                    target:
+                      rawValue,
+                  });
+                }}
+              />
+            </label>
+
+            <button
+              className="primary-btn"
+              type="submit"
+            >
               <BellRing
-                size={38}
+                size={17}
               />
 
-              <h3>
-                Chưa có cảnh báo
-              </h3>
+              Tạo cảnh báo
+            </button>
 
-              <p>
-                Tạo cảnh báo đầu tiên
-                để theo dõi mức giá
-                bạn quan tâm.
-              </p>
+            {done && (
+              <div className="success-box">
+                <CheckCircle2
+                  size={18}
+                />
+
+                Cảnh báo đã được
+                tạo thành công.
+              </div>
+            )}
+          </form>
+
+          <div className="section-card">
+            <div className="section-head">
+              <div>
+                <span className="eyebrow">
+                  ĐANG THEO DÕI
+                </span>
+
+                <h2>
+                  Cảnh báo của tôi
+                </h2>
+              </div>
             </div>
-          ) : (
-            <div className="alert-list">
-              {alerts.map(
-                (alert) => {
-                  const goldName =
-                    options.find(
-                      ([code]) =>
-                        code ===
-                        alert.type
-                    )?.[1] ||
-                    alert.type;
 
-                  const conditionText =
-                    alert.condition ===
-                      'below'
-                      ? '≤'
-                      : '≥';
+            {alerts.length === 0 ? (
+              <div className="empty-state">
+                <BellRing
+                  size={38}
+                />
 
-                  return (
-                    <div
-                      className="alert-item"
-                      key={alert._id}
-                    >
-                      <div className="alert-info">
-                        <strong>{goldName}</strong>
+                <h3>
+                  Chưa có cảnh báo
+                </h3>
 
-                        <small>
-                          Giá {conditionText}{' '}
-                          {vi(alert.targetPrice)}₫
-                        </small>
+                <p>
+                  Tạo cảnh báo đầu tiên
+                  để theo dõi mức giá
+                  bạn quan tâm.
+                </p>
+              </div>
+            ) : (
+              <div className="alert-list">
+                {alerts.map(
+                  (alert) => {
+                    const goldName =
+                      options.find(
+                        ([code]) =>
+                          code ===
+                          alert.type
+                      )?.[1] ||
+                      alert.type;
 
-                        <span
-                          className={`alert-status ${alert.triggered
+                    const conditionText =
+                      alert.condition ===
+                        'below'
+                        ? '≤'
+                        : '≥';
+
+                    return (
+                      <div
+                        className="alert-item"
+                        key={alert._id}
+                      >
+                        <div className="alert-info">
+                          <strong>{goldName}</strong>
+
+                          <small>
+                            Giá {conditionText}{' '}
+                            {vi(alert.targetPrice)}₫
+                          </small>
+
+                          <span
+                            className={`alert-status ${alert.triggered
                               ? 'triggered'
                               : 'active'
-                            }`}
+                              }`}
+                          >
+                            {alert.triggered
+                              ? 'Đã kích hoạt'
+                              : 'Đang theo dõi'}
+                          </span>
+                        </div>
+
+                        <button
+                          type="button"
+                          className="icon-btn danger"
+                          aria-label="Xóa cảnh báo"
+                          onClick={() =>
+                            removeAlert(alert._id)
+                          }
                         >
-                          {alert.triggered
-                            ? 'Đã kích hoạt'
-                            : 'Đang theo dõi'}
-                        </span>
+                          <Trash2 size={17} />
+                        </button>
                       </div>
-
-                      <button
-                        type="button"
-                        className="icon-btn danger"
-                        aria-label="Xóa cảnh báo"
-                        onClick={() =>
-                          removeAlert(alert._id)
-                        }
-                      >
-                        <Trash2 size={17} />
-                      </button>
-                    </div>
-                  );
-                }
-              )}
-            </div>
-          )}
-        </div>
-      </div>
-
-      <div className="section-card explainer">
-        <div className="icon-bubble">
-          <BellRing />
+                    );
+                  }
+                )}
+              </div>
+            )}
+          </div>
         </div>
 
-        <h2>
-          Web Push hoạt động thế nào?
-        </h2>
+        <div className="section-card explainer">
+          <div className="icon-bubble">
+            <BellRing />
+          </div>
 
-        <ol>
-          <li>
-            Cho phép trình duyệt gửi
-            thông báo.
-          </li>
+          <h2>
+            Web Push hoạt động thế nào?
+          </h2>
 
-          <li>
-            Chọn loại vàng và mức giá
-            cần theo dõi.
-          </li>
+          <ol>
+            <li>
+              Cho phép trình duyệt gửi
+              thông báo.
+            </li>
 
-          <li>
-            Hệ thống tự động kiểm tra
-            giá theo định kỳ.
-          </li>
+            <li>
+              Chọn loại vàng và mức giá
+              cần theo dõi.
+            </li>
 
-          <li>
-            Khi giá chạm ngưỡng, bạn
-            sẽ nhận thông báo trên
-            thiết bị.
-          </li>
-        </ol>
+            <li>
+              Hệ thống tự động kiểm tra
+              giá theo định kỳ.
+            </li>
 
-        <p className="muted">
-          Bạn có thể tạo nhiều cảnh báo
-          cho các mức giá khác nhau.
-        </p>
-      </div>
-    </section>
+            <li>
+              Khi giá chạm ngưỡng, bạn
+              sẽ nhận thông báo trên
+              thiết bị.
+            </li>
+          </ol>
+
+          <p className="muted">
+            Bạn có thể tạo nhiều cảnh báo
+            cho các mức giá khác nhau.
+          </p>
+        </div>
+      </section>
+    </>
   );
 }

@@ -23,10 +23,57 @@ import {
   normalizeOne,
   parseHistory,
 } from '../services/goldApi.js';
+import Seo from '../seo/Seo.jsx';
+import { websiteSchema } from '../seo/schema.js';
 
 const domestic = TYPES.filter(
   ([code]) => code !== 'XAUUSD'
 );
+
+const goldPages = [
+  {
+    title: 'Giá vàng SJC',
+    description:
+      'Giá mua vào, bán ra, spread và lịch sử giá vàng SJC.',
+    path: '/gia-vang-sjc',
+  },
+  {
+    title: 'Giá vàng nhẫn 9999',
+    description:
+      'Theo dõi giá vàng nhẫn 9999 và biến động mới nhất.',
+    path: '/gia-vang-nhan-9999',
+  },
+  {
+    title: 'Giá vàng PNJ',
+    description:
+      'Giá vàng PNJ, lịch sử và chênh lệch mua bán.',
+    path: '/gia-vang-pnj',
+  },
+  {
+    title: 'Giá vàng DOJI',
+    description:
+      'Theo dõi giá vàng DOJI và biến động trong ngày.',
+    path: '/gia-vang-doji',
+  },
+  {
+    title: 'Giá vàng thế giới',
+    description:
+      'Giá XAU/USD theo USD/oz và lịch sử giá vàng quốc tế.',
+    path: '/gia-vang-the-gioi',
+  },
+  {
+    title: 'Giá vàng 24K',
+    description:
+      'Giá vàng 24K mua vào, bán ra và lịch sử biến động.',
+    path: '/gia-vang-24k',
+  },
+  {
+    title: 'Giá vàng 18K',
+    description:
+      'Giá vàng 18K tham khảo theo hàm lượng vàng 75%.',
+    path: '/gia-vang-18k',
+  },
+];
 
 const vi = (number) =>
   new Intl.NumberFormat('vi-VN').format(
@@ -45,13 +92,12 @@ function Change({ value }) {
 
   return (
     <span
-      className={`change ${
-        number === 0
-          ? 'flat'
-          : isUp
-            ? 'up'
-            : 'down'
-      }`}
+      className={`change ${number === 0
+        ? 'flat'
+        : isUp
+          ? 'up'
+          : 'down'
+        }`}
     >
       {number === 0 ? (
         '—'
@@ -157,6 +203,14 @@ export default function Home() {
 
   return (
     <>
+      <Seo
+        title="Giá vàng hôm nay"
+        description="Cập nhật giá vàng SJC, PNJ, DOJI, vàng nhẫn, giá vàng trong nước và giá vàng thế giới mới nhất tại giavang.today."
+        path="/"
+        image="/og/home.jpg"
+        schema={websiteSchema()}
+      />
+
       <section className="hero-wrap container">
         <div className="page-title">
           <div>
@@ -197,7 +251,7 @@ export default function Home() {
               $
               {usd(
                 world?.buy ||
-                  world?.sell
+                world?.sell
               )}
             </h2>
 
@@ -344,25 +398,24 @@ export default function Home() {
 
                   <td>
                     <span
-                      className={`trend-pill ${
-                        Number(
+                      className={`trend-pill ${Number(
+                        row.change_sell
+                      ) < 0
+                        ? 'negative'
+                        : Number(
                           row.change_sell
-                        ) < 0
-                          ? 'negative'
-                          : Number(
-                                row.change_sell
-                              ) > 0
-                            ? 'positive'
-                            : ''
-                      }`}
+                        ) > 0
+                          ? 'positive'
+                          : ''
+                        }`}
                     >
                       {Number(
                         row.change_sell
                       ) < 0
                         ? 'Giảm'
                         : Number(
-                              row.change_sell
-                            ) > 0
+                          row.change_sell
+                        ) > 0
                           ? 'Tăng'
                           : 'Không đổi'}
                     </span>
@@ -377,6 +430,49 @@ export default function Home() {
               ))}
             </tbody>
           </table>
+        </div>
+      </section>
+
+      {/* SEO GOLD HUB */}
+      <section className="container section-card">
+        <div className="section-head">
+          <div>
+            <span className="eyebrow">
+              KHÁM PHÁ
+            </span>
+
+            <h2>
+              Theo dõi các loại giá vàng
+            </h2>
+
+            <p>
+              Xem chi tiết giá mua bán, biến động,
+              lịch sử và thông tin của từng loại vàng
+              phổ biến trên giavang.today.
+            </p>
+          </div>
+        </div>
+
+        <div className="gold-hub-grid">
+          {goldPages.map((item) => (
+            <Link
+              key={item.path}
+              to={item.path}
+              className="gold-hub-card"
+            >
+              <strong>
+                {item.title}
+              </strong>
+
+              <span>
+                {item.description}
+              </span>
+
+              <small>
+                Xem chi tiết →
+              </small>
+            </Link>
+          ))}
         </div>
       </section>
 

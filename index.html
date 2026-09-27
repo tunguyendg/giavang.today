@@ -1,37 +1,35 @@
 <!doctype html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
 
-    <meta
-      name="theme-color"
-      content="#11162d"
-    />
+<head>
+  <meta charset="UTF-8" />
 
-    <meta
-      name="description"
-      content="giavang.today - theo dõi giá vàng, danh mục và cảnh báo giá"
-    />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="/favicon.svg"
-    />
+  <meta name="theme-color" content="#11162d" />
 
-    <title>giavang.today</title>
-  </head>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-  <body>
-    <div id="root"></div>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7GF9KEFSDN"></script>
 
-    <script
-      type="module"
-      src="/src/main.jsx"
-    ></script>
-  </body>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-7GF9KEFSDN');
+  </script>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
 </html>

@@ -3,7 +3,7 @@ import {
   useNavigate,
   useSearchParams,
 } from 'react-router-dom';
-
+import Seo from '../seo/Seo.jsx';
 import { API_URL } from '../config/api.js';
 
 export default function VerifyEmail() {
@@ -50,7 +50,7 @@ export default function VerifyEmail() {
           setStatus('error');
           setMessage(
             data.message ||
-              'Không thể xác nhận email. Liên kết có thể đã hết hạn hoặc không còn hợp lệ.'
+            'Không thể xác nhận email. Liên kết có thể đã hết hạn hoặc không còn hợp lệ.'
           );
           return;
         }
@@ -83,50 +83,58 @@ export default function VerifyEmail() {
         : 'Xác nhận thất bại';
 
   return (
-    <section className="auth-page">
-      <div className="auth-card">
-        <div className="auth-heading">
-          <span className="eyebrow">
-            XÁC NHẬN EMAIL
-          </span>
+    <>
+      <Seo
+        title="Xác nhận email"
+        description="Trang xác nhận email cho tài khoản giavang.today."
+        path="/verify-email"
+        noindex
+      />
+      <section className="auth-page">
+        <div className="auth-card">
+          <div className="auth-heading">
+            <span className="eyebrow">
+              XÁC NHẬN EMAIL
+            </span>
 
-          <h1>{title}</h1>
-        </div>
+            <h1>{title}</h1>
+          </div>
 
-        <div
-          className={
-            status === 'success'
-              ? 'success-box'
-              : ''
-          }
-        >
-          {message}
-        </div>
-
-        {status === 'success' && (
-          <button
-            type="button"
-            className="primary-btn"
-            onClick={() =>
-              navigate('/login')
+          <div
+            className={
+              status === 'success'
+                ? 'success-box'
+                : ''
             }
           >
-            Đăng nhập
-          </button>
-        )}
+            {message}
+          </div>
 
-        {status === 'error' && (
-          <button
-            type="button"
-            className="primary-btn"
-            onClick={() =>
-              navigate('/login')
-            }
-          >
-            Quay lại đăng nhập
-          </button>
-        )}
-      </div>
-    </section>
+          {status === 'success' && (
+            <button
+              type="button"
+              className="primary-btn"
+              onClick={() =>
+                navigate('/login')
+              }
+            >
+              Đăng nhập
+            </button>
+          )}
+
+          {status === 'error' && (
+            <button
+              type="button"
+              className="primary-btn"
+              onClick={() =>
+                navigate('/login')
+              }
+            >
+              Quay lại đăng nhập
+            </button>
+          )}
+        </div>
+      </section>
+    </>
   );
 }

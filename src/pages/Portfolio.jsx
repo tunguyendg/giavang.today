@@ -7,6 +7,7 @@ import {
   X,
 } from 'lucide-react';
 
+import Seo from '../seo/Seo.jsx';
 import { API_URL } from '../config/api.js';
 
 import {
@@ -353,326 +354,335 @@ export default function Portfolio() {
   }
 
   return (
-    <section className="container page-stack">
-      <div className="page-title">
-        <div>
-          <span className="eyebrow">
-            DANH MỤC CÁ NHÂN
-          </span>
+    <>
+      <Seo
+        title="Danh mục vàng"
+        description="Quản lý danh mục vàng cá nhân, theo dõi giá trị hiện tại và lãi/lỗ trên giavang.today."
+        path="/portfolio"
+        noindex
+      />
 
-          <h1>Vàng của tôi</h1>
+      <section className="container page-stack">
+        <div className="page-title">
+          <div>
+            <span className="eyebrow">
+              DANH MỤC CÁ NHÂN
+            </span>
 
-          <p>
-            Theo dõi giá trị danh mục
-            vàng và lãi/lỗ theo giá thị
-            trường hiện tại.
-          </p>
-        </div>
-      </div>
+            <h1>Vàng của tôi</h1>
 
-      <div className="summary-grid">
-        <div className="summary-card">
-          <span>
-            Giá trị hiện tại
-          </span>
-
-          <strong>
-            {vi(totals.value)}₫
-          </strong>
+            <p>
+              Theo dõi giá trị danh mục
+              vàng và lãi/lỗ theo giá thị
+              trường hiện tại.
+            </p>
+          </div>
         </div>
 
-        <div className="summary-card">
-          <span>Tổng vốn</span>
+        <div className="summary-grid">
+          <div className="summary-card">
+            <span>
+              Giá trị hiện tại
+            </span>
 
-          <strong>
-            {vi(totals.cost)}₫
-          </strong>
-        </div>
-
-        <div
-          className={`summary-card ${pnl >= 0
-            ? 'profit'
-            : 'loss'
-            }`}
-        >
-          <span>Lãi / lỗ</span>
-
-          <strong>
-            {pnl >= 0 ? '+' : ''}
-            {vi(pnl)}₫
-          </strong>
-
-          <small>
-            {pct >= 0 ? '+' : ''}
-            {pct.toFixed(2)}%
-          </small>
-        </div>
-      </div>
-
-      <p className="muted">
-        Giá trị hiện tại được ước tính
-        theo giá mua vào của từng loại
-        vàng.
-      </p>
-
-      <div className="two-col">
-        <div className="section-card">
-          <div className="section-head">
-            <div>
-              <span className="eyebrow">
-                TÀI SẢN
-              </span>
-
-              <h2>Danh mục</h2>
-            </div>
+            <strong>
+              {vi(totals.value)}₫
+            </strong>
           </div>
 
-          {items.length === 0 ? (
-            <div className="empty-state">
-              <WalletCards size={38} />
+          <div className="summary-card">
+            <span>Tổng vốn</span>
 
-              <h3>Chưa có vàng</h3>
+            <strong>
+              {vi(totals.cost)}₫
+            </strong>
+          </div>
 
-              <p>
-                Thêm giao dịch đầu tiên
-                để bắt đầu tính lãi/lỗ.
-              </p>
-            </div>
-          ) : (
-            <div className="holdings">
-              {items.map((item) => {
-                const currentPrice =
-                  prices[item.type]
-                    ?.buy || 0;
+          <div
+            className={`summary-card ${pnl >= 0
+              ? 'profit'
+              : 'loss'
+              }`}
+          >
+            <span>Lãi / lỗ</span>
 
-                const quantity =
-                  Number(item.qty);
+            <strong>
+              {pnl >= 0 ? '+' : ''}
+              {vi(pnl)}₫
+            </strong>
 
-                const buyPrice =
-                  Number(item.cost);
-
-                const cost =
-                  buyPrice *
-                  quantity;
-
-                const value =
-                  currentPrice *
-                  quantity;
-
-                const delta =
-                  value - cost;
-
-                const deltaPct =
-                  cost > 0
-                    ? (delta /
-                      cost) *
-                    100
-                    : 0;
-
-                const goldName =
-                  options.find(
-                    ([code]) =>
-                      code ===
-                      item.type
-                  )?.[1] ||
-                  item.type;
-
-                return (
-                  <div
-                    className="holding"
-                    key={item._id}
-                  >
-                    <div>
-                      <strong>
-                        {goldName}
-                      </strong>
-
-                      <small>
-                        {quantity}{' '}
-                        lượng · vốn{' '}
-                        {vi(
-                          buyPrice
-                        )}
-                        ₫/lượng
-                      </small>
-
-                      <small>
-                        Giá hiện tại{' '}
-                        {vi(
-                          currentPrice
-                        )}
-                        ₫/lượng
-                      </small>
-                    </div>
-
-                    <div>
-                      <strong>
-                        {vi(value)}₫
-                      </strong>
-
-                      <small
-                        className={
-                          delta >= 0
-                            ? 'green'
-                            : 'red'
-                        }
-                      >
-                        {delta >= 0
-                          ? '+'
-                          : ''}
-                        {vi(delta)}₫ ·{' '}
-                        {deltaPct >= 0
-                          ? '+'
-                          : ''}
-                        {deltaPct.toFixed(
-                          2
-                        )}
-                        %
-                      </small>
-                    </div>
-
-                    <div className="holding-actions">
-                      <button
-                        type="button"
-                        className="icon-btn"
-                        aria-label="Sửa danh mục"
-                        onClick={() => startEdit(item)}
-                      >
-                        <Pencil size={17} />
-                      </button>
-
-                      <button
-                        type="button"
-                        className="icon-btn danger"
-                        aria-label="Xóa khỏi danh mục"
-                        onClick={() => removeItem(item._id)}
-                      >
-                        <Trash2 size={17} />
-                      </button>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          )}
+            <small>
+              {pct >= 0 ? '+' : ''}
+              {pct.toFixed(2)}%
+            </small>
+          </div>
         </div>
 
-        <form
-          className="section-card form-card"
-          onSubmit={submitForm}
-        >
-          <span className="eyebrow">
-            {editingId
-              ? 'CHỈNH SỬA'
-              : 'THÊM VÀNG'}
-          </span>
+        <p className="muted">
+          Giá trị hiện tại được ước tính
+          theo giá mua vào của từng loại
+          vàng.
+        </p>
 
-          <h2>
-            {editingId
-              ? 'Cập nhật danh mục'
-              : 'Thêm vào danh mục'}
-          </h2>
+        <div className="two-col">
+          <div className="section-card">
+            <div className="section-head">
+              <div>
+                <span className="eyebrow">
+                  TÀI SẢN
+                </span>
 
-          <label>
-            Loại vàng
+                <h2>Danh mục</h2>
+              </div>
+            </div>
 
-            <select
-              value={form.type}
-              onChange={(e) =>
-                setForm({
-                  ...form,
-                  type:
-                    e.target.value,
-                })
-              }
-            >
-              {options.map(
-                ([code, name]) => (
-                  <option
-                    key={code}
-                    value={code}
-                  >
-                    {name}
-                  </option>
-                )
-              )}
-            </select>
-          </label>
+            {items.length === 0 ? (
+              <div className="empty-state">
+                <WalletCards size={38} />
 
-          <label>
-            Số lượng (lượng)
+                <h3>Chưa có vàng</h3>
 
-            <input
-              type="number"
-              min="0.1"
-              step="0.1"
-              required
-              value={form.qty}
-              onChange={(e) =>
-                setForm({
-                  ...form,
-                  qty:
-                    e.target.value,
-                })
-              }
-            />
-          </label>
+                <p>
+                  Thêm giao dịch đầu tiên
+                  để bắt đầu tính lãi/lỗ.
+                </p>
+              </div>
+            ) : (
+              <div className="holdings">
+                {items.map((item) => {
+                  const currentPrice =
+                    prices[item.type]
+                      ?.buy || 0;
 
-          <label>
-            Giá mua / lượng
+                  const quantity =
+                    Number(item.qty);
 
-            <input
-              type="text"
-              inputMode="numeric"
-              required
-              value={
-                form.cost
-                  ? vi(form.cost)
-                  : ''
-              }
-              onChange={(e) => {
-                const rawValue =
-                  e.target.value.replace(/\D/g, '');
+                  const buyPrice =
+                    Number(item.cost);
 
-                setForm({
-                  ...form,
-                  cost: rawValue,
-                });
-              }}
-            />
-          </label>
+                  const cost =
+                    buyPrice *
+                    quantity;
 
-          <div className="form-actions">
-            <button
-              className="primary-btn"
-              type="submit"
-            >
-              {editingId ? (
-                <>
-                  <Pencil size={17} />
-                  Cập nhật
-                </>
-              ) : (
-                <>
-                  <Plus size={17} />
-                  Thêm vàng
-                </>
-              )}
-            </button>
+                  const value =
+                    currentPrice *
+                    quantity;
 
-            {editingId && (
-              <button
-                type="button"
-                className="secondary-btn"
-                onClick={resetForm}
-              >
-                <X size={17} />
-                Hủy chỉnh sửa
-              </button>
+                  const delta =
+                    value - cost;
+
+                  const deltaPct =
+                    cost > 0
+                      ? (delta /
+                        cost) *
+                        100
+                      : 0;
+
+                  const goldName =
+                    options.find(
+                      ([code]) =>
+                        code ===
+                        item.type
+                    )?.[1] ||
+                    item.type;
+
+                  return (
+                    <div
+                      className="holding"
+                      key={item._id}
+                    >
+                      <div>
+                        <strong>
+                          {goldName}
+                        </strong>
+
+                        <small>
+                          {quantity}{' '}
+                          lượng · vốn{' '}
+                          {vi(
+                            buyPrice
+                          )}
+                          ₫/lượng
+                        </small>
+
+                        <small>
+                          Giá hiện tại{' '}
+                          {vi(
+                            currentPrice
+                          )}
+                          ₫/lượng
+                        </small>
+                      </div>
+
+                      <div>
+                        <strong>
+                          {vi(value)}₫
+                        </strong>
+
+                        <small
+                          className={
+                            delta >= 0
+                              ? 'green'
+                              : 'red'
+                          }
+                        >
+                          {delta >= 0
+                            ? '+'
+                            : ''}
+                          {vi(delta)}₫ ·{' '}
+                          {deltaPct >= 0
+                            ? '+'
+                            : ''}
+                          {deltaPct.toFixed(
+                            2
+                          )}
+                          %
+                        </small>
+                      </div>
+
+                      <div className="holding-actions">
+                        <button
+                          type="button"
+                          className="icon-btn"
+                          aria-label="Sửa danh mục"
+                          onClick={() => startEdit(item)}
+                        >
+                          <Pencil size={17} />
+                        </button>
+
+                        <button
+                          type="button"
+                          className="icon-btn danger"
+                          aria-label="Xóa khỏi danh mục"
+                          onClick={() => removeItem(item._id)}
+                        >
+                          <Trash2 size={17} />
+                        </button>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             )}
           </div>
-        </form>
-      </div>
-    </section>
+
+          <form
+            className="section-card form-card"
+            onSubmit={submitForm}
+          >
+            <span className="eyebrow">
+              {editingId
+                ? 'CHỈNH SỬA'
+                : 'THÊM VÀNG'}
+            </span>
+
+            <h2>
+              {editingId
+                ? 'Cập nhật danh mục'
+                : 'Thêm vào danh mục'}
+            </h2>
+
+            <label>
+              Loại vàng
+
+              <select
+                value={form.type}
+                onChange={(e) =>
+                  setForm({
+                    ...form,
+                    type:
+                      e.target.value,
+                  })
+                }
+              >
+                {options.map(
+                  ([code, name]) => (
+                    <option
+                      key={code}
+                      value={code}
+                    >
+                      {name}
+                    </option>
+                  )
+                )}
+              </select>
+            </label>
+
+            <label>
+              Số lượng (lượng)
+
+              <input
+                type="number"
+                min="0.1"
+                step="0.1"
+                required
+                value={form.qty}
+                onChange={(e) =>
+                  setForm({
+                    ...form,
+                    qty:
+                      e.target.value,
+                  })
+                }
+              />
+            </label>
+
+            <label>
+              Giá mua / lượng
+
+              <input
+                type="text"
+                inputMode="numeric"
+                required
+                value={
+                  form.cost
+                    ? vi(form.cost)
+                    : ''
+                }
+                onChange={(e) => {
+                  const rawValue =
+                    e.target.value.replace(/\D/g, '');
+
+                  setForm({
+                    ...form,
+                    cost: rawValue,
+                  });
+                }}
+              />
+            </label>
+
+            <div className="form-actions">
+              <button
+                className="primary-btn"
+                type="submit"
+              >
+                {editingId ? (
+                  <>
+                    <Pencil size={17} />
+                    Cập nhật
+                  </>
+                ) : (
+                  <>
+                    <Plus size={17} />
+                    Thêm vàng
+                  </>
+                )}
+              </button>
+
+              {editingId && (
+                <button
+                  type="button"
+                  className="secondary-btn"
+                  onClick={resetForm}
+                >
+                  <X size={17} />
+                  Hủy chỉnh sửa
+                </button>
+              )}
+            </div>
+          </form>
+        </div>
+      </section>
+    </>
   );
 }

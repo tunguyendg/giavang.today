@@ -8,6 +8,7 @@ import ApiDocs from './pages/ApiDocs.jsx';
 import Telegram from './pages/Telegram.jsx';
 import VerifyEmail from './pages/VerifyEmail.jsx';
 import Account from './pages/Account.jsx';
+import GoldDetail from './pages/GoldDetail.jsx';
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
         <Route path="/telegram" element={<Telegram />} />
         <Route path="/verify-email" element={<VerifyEmail />} />
         <Route path="/account" element={<Account />} />
+        <Route path="/:slug" element={<GoldDetail />} />
       </Routes>
     </Layout>
   );
