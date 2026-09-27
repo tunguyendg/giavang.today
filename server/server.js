@@ -54,6 +54,7 @@ webpush.setVapidDetails(
 
 const allowedOrigins = [
   "http://localhost:5173",
+  "http://localhost:4173",
   "https://giavang.today",
   "https://www.giavang.today",
 ];
