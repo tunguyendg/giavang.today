@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Seo from '../seo/Seo.jsx';
 import { API_URL } from '../config/api.js';
 
 export default function Auth() {
+  const googleButtonRef = useRef(null);
   const navigate = useNavigate();
 
   const [mode, setMode] = useState('login');
@@ -20,6 +21,112 @@ export default function Auth() {
     password: '',
     confirmPassword: '',
   });
+
+  useEffect(() => {
+    const clientId =
+      import.meta.env.VITE_GOOGLE_CLIENT_ID;
+
+    if (!clientId) {
+      console.error(
+        'Missing VITE_GOOGLE_CLIENT_ID'
+      );
+      return;
+    }
+
+    function initializeGoogle() {
+      if (!window.google) {
+        return;
+      }
+
+      window.google.accounts.id.initialize({
+        client_id: clientId,
+        callback: handleGoogleCredential,
+      });
+
+      if (googleButtonRef.current) {
+        window.google.accounts.id.renderButton(
+          googleButtonRef.current,
+          {
+            theme: 'outline',
+            size: 'large',
+            width: 440,
+            text: 'continue_with',
+            shape: 'rectangular',
+          }
+        );
+      }
+    }
+
+    const existingScript =
+      document.querySelector(
+        'script[src="https://accounts.google.com/gsi/client"]'
+      );
+
+    if (existingScript) {
+      initializeGoogle();
+      return;
+    }
+
+    const script =
+      document.createElement('script');
+
+    script.src =
+      'https://accounts.google.com/gsi/client';
+
+    script.async = true;
+    script.defer = true;
+
+    script.onload = initializeGoogle;
+
+    document.head.appendChild(script);
+  }, []);
+
+  async function handleGoogleCredential(response) {
+    try {
+      const apiResponse = await fetch(
+        `${API_URL}/api/auth/google`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            credential: response.credential,
+          }),
+        }
+      );
+
+      const data = await apiResponse.json();
+
+      if (!apiResponse.ok) {
+        alert(
+          data.message ||
+          'Đăng nhập Google thất bại.'
+        );
+        return;
+      }
+
+      localStorage.setItem(
+        'giavang_token',
+        data.token
+      );
+
+      window.dispatchEvent(
+        new Event('auth-changed')
+      );
+
+      navigate('/portfolio');
+    } catch (error) {
+      console.error(
+        'Google login error:',
+        error
+      );
+
+      alert(
+        'Không thể đăng nhập bằng Google. Vui lòng thử lại.'
+      );
+    }
+  }
 
   async function handleLogin() {
     try {
@@ -42,7 +149,7 @@ export default function Auth() {
       if (!response.ok) {
         alert(
           data.message ||
-            'Đăng nhập thất bại. Vui lòng kiểm tra lại thông tin.'
+          'Đăng nhập thất bại. Vui lòng kiểm tra lại thông tin.'
         );
         return;
       }
@@ -96,7 +203,7 @@ export default function Auth() {
       if (!response.ok) {
         alert(
           data.message ||
-            'Đăng ký thất bại. Vui lòng thử lại.'
+          'Đăng ký thất bại. Vui lòng thử lại.'
         );
         return;
       }
@@ -192,6 +299,14 @@ export default function Auth() {
             >
               Đăng ký
             </button>
+          </div>
+
+          <div className="google-auth-wrap">
+            <div ref={googleButtonRef} />
+
+            <div className="auth-divider">
+              <span>hoặc</span>
+            </div>
           </div>
 
           {mode === 'login' ? (

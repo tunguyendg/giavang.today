@@ -7,9 +7,12 @@ const crypto = require("crypto");
 const {
     sendVerificationEmail,
 } = require("../services/emailService");
-
+const { OAuth2Client } = require("google-auth-library");
 
 const router = express.Router();
+const googleClient = new OAuth2Client(
+    process.env.GOOGLE_CLIENT_ID
+);
 
 
 router.get("/me", authMiddleware, async (req, res) => {
@@ -145,6 +148,100 @@ router.post("/register", async (req, res) => {
 
         res.status(500).json({
             message: "Không thể đăng ký user",
+        });
+    }
+});
+
+router.post("/google", async (req, res) => {
+    try {
+        const { credential } = req.body;
+
+        if (!credential) {
+            return res.status(400).json({
+                message: "Thiếu Google credential",
+            });
+        }
+
+        const ticket =
+            await googleClient.verifyIdToken({
+                idToken: credential,
+                audience:
+                    process.env.GOOGLE_CLIENT_ID,
+            });
+
+        const payload = ticket.getPayload();
+
+        const {
+            sub: googleId,
+            email,
+            name,
+            email_verified: emailVerified,
+        } = payload;
+
+        if (!email || !googleId) {
+            return res.status(400).json({
+                message:
+                    "Google không trả về đủ thông tin user",
+            });
+        }
+
+        let user = await User.findOne({ email });
+
+        if (!user) {
+            user = await User.create({
+                name,
+                email,
+                googleId,
+                authProvider: "google",
+                emailVerified:
+                    Boolean(emailVerified),
+            });
+        } else {
+            if (!user.googleId) {
+                user.googleId = googleId;
+            }
+
+            if (!user.authProvider) {
+                user.authProvider = "google";
+            }
+
+            if (emailVerified) {
+                user.emailVerified = true;
+            }
+
+            await user.save();
+        }
+
+        const token = jwt.sign(
+            {
+                userId: user._id,
+                email: user.email,
+            },
+            process.env.JWT_SECRET,
+            {
+                expiresIn: "7d",
+            }
+        );
+
+        return res.json({
+            message:
+                "Đăng nhập Google thành công",
+            token,
+            user: {
+                id: user._id,
+                name: user.name,
+                email: user.email,
+            },
+        });
+    } catch (error) {
+        console.error(
+            "Google login error:",
+            error
+        );
+
+        return res.status(401).json({
+            message:
+                "Google credential không hợp lệ",
         });
     }
 });
