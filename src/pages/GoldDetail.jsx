@@ -344,6 +344,7 @@ export default function GoldDetail() {
                     page.description
                 }
                 path={`/${page.slug}`}
+                image={page.ogImage}
                 schema={goldPageSchema(page)}
             />
 

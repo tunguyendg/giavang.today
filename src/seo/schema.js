@@ -69,3 +69,68 @@ export function goldPageSchema(page) {
     ],
   };
 }
+
+export function blogPostSchema(post) {
+  const articleUrl =
+    `https://giavang.today/blog/${post.slug}`;
+
+  const authorUrl =
+    `https://giavang.today/tac-gia/${post.author.slug}`;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+
+    headline: post.title,
+
+    description: post.description,
+
+    image: [
+      `https://giavang.today${post.heroImage}`,
+    ],
+
+    datePublished: post.publishedAt,
+
+    dateModified:
+      post.updatedAt || post.publishedAt,
+
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": articleUrl,
+    },
+
+    author: {
+      "@type": "Person",
+      name: post.author.name,
+      url: authorUrl,
+    },
+
+    publisher: {
+      "@type": "Organization",
+      name: "giavang.today",
+      url: "https://giavang.today",
+    },
+  };
+}
+
+export function authorProfileSchema(author) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+
+    mainEntity: {
+      "@type": "Person",
+
+      name: author.name,
+
+      url:
+        `https://giavang.today/tac-gia/${author.slug}`,
+
+      jobTitle: author.role,
+
+      sameAs: [
+        author.xUrl,
+      ],
+    },
+  };
+}

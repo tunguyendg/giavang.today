@@ -32,6 +32,7 @@ const goldNav = [
 ];
 
 const utilityNav = [
+  ['/blog', 'Blog'],
   ['/portfolio', 'Vàng của tôi'],
   ['/alerts', 'Cảnh báo'],
   ['/api', 'API'],
@@ -475,6 +476,10 @@ export default function Layout({ children }) {
 
             <Link to="/">
               Giá vàng hôm nay
+            </Link>
+
+            <Link to="/blog">
+              Blog kiến thức vàng
             </Link>
           </div>
 

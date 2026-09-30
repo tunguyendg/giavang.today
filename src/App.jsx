@@ -10,6 +10,9 @@ import VerifyEmail from './pages/VerifyEmail.jsx';
 import Account from './pages/Account.jsx';
 import GoldDetail from './pages/GoldDetail.jsx';
 import WorldGoldConverter from "./pages/WorldGoldConverter";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
+import Author from "./pages/Author";
 
 export default function App() {
   return (
@@ -27,6 +30,18 @@ export default function App() {
         <Route
           path="/quy-doi-gia-vang-the-gioi"
           element={<WorldGoldConverter />}
+        />
+        <Route
+          path="/blog"
+          element={<Blog />}
+        />
+        <Route
+          path="/blog/:slug"
+          element={<BlogPost />}
+        />
+        <Route
+          path="/tac-gia/tony-nguyen"
+          element={<Author />}
         />
       </Routes>
     </Layout>

@@ -7,6 +7,8 @@ export const goldSeoPages = {
 
     title: 'Giá vàng SJC hôm nay',
 
+    ogImage: '/og/gia-vang-sjc.jpg',
+
     description:
       'Cập nhật giá vàng SJC hôm nay, giá mua vào, bán ra, biến động, chênh lệch mua bán và lịch sử giá vàng SJC mới nhất.',
 
@@ -104,7 +106,16 @@ export const goldSeoPages = {
       },
     },
 
-    relatedArticles: [],
+    relatedArticles: [
+      {
+        title:
+          'Tại sao giá vàng SJC cao hơn giá vàng thế giới?',
+        path:
+          '/blog/tai-sao-gia-vang-sjc-cao-hon-gia-vang-the-gioi',
+        description:
+          'Giải thích cách tính chênh lệch giữa giá vàng SJC và giá vàng thế giới sau quy đổi.',
+      },
+    ],
 
     keywords: [
       'giá vàng SJC hôm nay',
@@ -125,6 +136,8 @@ export const goldSeoPages = {
     name: 'Vàng nhẫn 9999',
 
     title: 'Giá vàng nhẫn 9999 hôm nay',
+
+    ogImage: '/og/gia-vang-nhan-9999.jpg',
 
     description:
       'Cập nhật giá vàng nhẫn 9999 hôm nay, giá mua vào, bán ra, biến động, chênh lệch mua bán và lịch sử giá mới nhất.',
@@ -240,6 +253,8 @@ export const goldSeoPages = {
     name: 'Vàng PNJ',
 
     title: 'Giá vàng PNJ hôm nay',
+
+    ogImage: '/og/gia-vang-pnj.jpg',
 
     description:
       'Cập nhật giá vàng PNJ hôm nay, giá mua vào, bán ra, biến động, chênh lệch mua bán và lịch sử giá PNJ mới nhất.',
@@ -358,6 +373,8 @@ export const goldSeoPages = {
     name: 'Vàng DOJI',
 
     title: 'Giá vàng DOJI hôm nay',
+
+    ogImage: '/og/gia-vang-doji.jpg',
 
     description:
       'Cập nhật giá vàng DOJI hôm nay, giá mua vào, bán ra, biến động, chênh lệch mua bán và lịch sử giá DOJI mới nhất.',
@@ -480,6 +497,8 @@ export const goldSeoPages = {
 
     title: 'Giá vàng thế giới hôm nay',
 
+    ogImage: '/og/gia-vang-the-gioi.jpg',
+
     description:
       'Cập nhật giá vàng thế giới hôm nay theo USD/ounce, biến động, lịch sử giá và so sánh với thị trường vàng trong nước.',
 
@@ -594,6 +613,8 @@ export const goldSeoPages = {
     name: 'Vàng 24K',
 
     title: 'Giá vàng 24K hôm nay',
+
+    ogImage: '/og/gia-vang-24k.jpg',
 
     description:
       'Cập nhật giá vàng 24K hôm nay, giá mua vào, bán ra, biến động, chênh lệch mua bán và lịch sử giá vàng 24K mới nhất.',
@@ -716,6 +737,8 @@ export const goldSeoPages = {
     name: 'Vàng 18K',
 
     title: 'Giá vàng 18K hôm nay',
+
+    ogImage: '/og/gia-vang-18k.jpg',
 
     description:
       'Tham khảo giá vàng 18K hôm nay được ước tính theo hàm lượng vàng 75%, cùng thông tin về đặc điểm và sự khác biệt giữa vàng 18K và 24K.',

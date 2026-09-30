@@ -9,6 +9,7 @@ export default function Seo({
   description,
   path = '/',
   image = '/favicon.svg',
+  type = "website",
   noindex = false,
   schema = null,
 }) {
@@ -82,7 +83,7 @@ export default function Seo({
 
       <meta
         property="og:type"
-        content="website"
+        content={type}
       />
 
       <meta
