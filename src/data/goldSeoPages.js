@@ -834,7 +834,38 @@ export const goldSeoPages = {
       officialReference: null,
     },
 
-    relatedArticles: [],
+    relatedArticles: [
+      {
+        title: "Giá vàng thế giới là gì? XAU/USD là gì?",
+        path: "/blog/gia-vang-the-gioi-la-gi-xau-usd-la-gi",
+        description:
+          "Giải thích XAU/USD, đơn vị USD/ounce và cách đọc giá vàng quốc tế.",
+      },
+      {
+        title: "Cách quy đổi giá vàng thế giới sang VND/lượng",
+        path: "/blog/cach-quy-doi-gia-vang-the-gioi-sang-vnd-luong",
+        description:
+          "Công thức đổi giá vàng từ USD/ounce sang VND/lượng và cách so sánh với giá vàng trong nước.",
+      },
+      {
+        title: "Troy ounce là gì? 1 ounce vàng bằng bao nhiêu gram?",
+        path: "/blog/troy-ounce-la-gi-1-ounce-vang-bao-nhieu-gram",
+        description:
+          "Giải thích đơn vị troy ounce và cách đổi sang gram, lượng vàng tại Việt Nam.",
+      },
+      {
+        title: "Vì sao giá vàng thế giới biến động?",
+        path: "/blog/vi-sao-gia-vang-the-gioi-bien-dong",
+        description:
+          "Các yếu tố ảnh hưởng đến giá vàng như USD, lãi suất, lợi suất trái phiếu và nhu cầu trú ẩn.",
+      },
+      {
+        title: "Giá vàng thế giới ảnh hưởng đến giá vàng Việt Nam như thế nào?",
+        path: "/blog/gia-vang-the-gioi-anh-huong-gia-vang-viet-nam",
+        description:
+          "Giải thích mối liên hệ giữa giá vàng thế giới, tỷ giá USD/VND và giá vàng tại Việt Nam.",
+      },
+    ],
 
     keywords: [
       'giá vàng 18K hôm nay',
