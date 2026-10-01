@@ -108,10 +108,32 @@ export const goldSeoPages = {
 
     relatedArticles: [
       {
-        title:
-          'Tại sao giá vàng SJC cao hơn giá vàng thế giới?',
-        path:
-          '/blog/tai-sao-gia-vang-sjc-cao-hon-gia-vang-the-gioi',
+        title: 'Vàng SJC là gì? Có phải vàng 9999 không?',
+        path: '/blog/vang-sjc-la-gi-co-phai-vang-9999-khong',
+        description:
+          'Giải thích vàng SJC, độ tinh khiết 9999 và sự khác nhau giữa thương hiệu SJC với khái niệm vàng 9999.',
+      },
+      {
+        title: 'Premium SJC là gì? Cách tính chênh lệch với giá vàng thế giới',
+        path: '/blog/premium-sjc-la-gi',
+        description:
+          'Giải thích premium SJC và cách tính mức chênh lệch giữa giá SJC với giá vàng thế giới sau quy đổi.',
+      },
+      {
+        title: 'Chênh lệch mua bán vàng SJC là gì?',
+        path: '/blog/chenh-lech-mua-ban-vang-sjc-la-gi',
+        description:
+          'Giải thích spread SJC, cách tính và vì sao khoảng chênh lệch mua bán ảnh hưởng đến chi phí giao dịch.',
+      },
+      {
+        title: 'Vàng SJC và vàng nhẫn 9999 khác nhau thế nào?',
+        path: '/blog/vang-sjc-va-vang-nhan-9999-khac-nhau-the-nao',
+        description:
+          'So sánh SJC và vàng nhẫn 9999 về hình thức, giá bán, spread và cách thị trường định giá.',
+      },
+      {
+        title: 'Tại sao giá vàng SJC cao hơn giá vàng thế giới?',
+        path: '/blog/tai-sao-gia-vang-sjc-cao-hon-gia-vang-the-gioi',
         description:
           'Giải thích cách tính chênh lệch giữa giá vàng SJC và giá vàng thế giới sau quy đổi.',
       },
