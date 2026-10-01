@@ -1069,7 +1069,7 @@ export default function GoldDetail() {
                                         to={
                                             article.path
                                         }
-                                        className="summary-card"
+                                        className="related-article-card"
                                     >
                                         <strong>
                                             {

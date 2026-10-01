@@ -1209,3 +1209,37 @@
     margin: -20px -20px 18px;
   }
 }
+
+.related-article-card {
+  display: block;
+  width: 100%;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #11172c;
+  overflow: visible;
+}
+
+.related-article-card + .related-article-card {
+  margin-top: 12px;
+}
+
+.related-article-card strong {
+  display: block;
+  margin: 0 0 8px;
+  font-size: 20px;
+  line-height: 1.35;
+}
+
+.related-article-card span {
+  display: block;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+  overflow: visible;
+}
+
+.related-article-card:hover {
+  border-color: rgba(243, 194, 27, 0.55);
+  background: #151c33;
+}
