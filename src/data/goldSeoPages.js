@@ -255,7 +255,26 @@ export const goldSeoPages = {
       officialReference: null,
     },
 
-    relatedArticles: [],
+    relatedArticles: [
+      {
+        title: 'Vàng nhẫn 9999 là gì?',
+        path: '/blog/vang-nhan-9999-la-gi',
+        description:
+          'Giải thích vàng nhẫn 9999, độ tinh khiết, đặc điểm và vì sao thường được dùng để tích trữ.',
+      },
+      {
+        title: 'Vàng 9999 có phải vàng 24K không?',
+        path: '/blog/vang-9999-co-phai-vang-24k-khong',
+        description:
+          'Giải thích mối liên hệ giữa vàng 9999 và vàng 24K, cùng sự khác nhau giữa hai cách gọi.',
+      },
+      {
+        title: 'Vàng nhẫn 9999 và vàng SJC khác nhau thế nào?',
+        path: '/blog/vang-nhan-9999-va-vang-sjc-khac-nhau-the-nao',
+        description:
+          'So sánh vàng nhẫn 9999 và SJC về hình thức, thương hiệu, giá mua bán và spread.',
+      },
+    ],
 
     keywords: [
       'giá vàng nhẫn 9999 hôm nay',
@@ -735,7 +754,20 @@ export const goldSeoPages = {
       },
     },
 
-    relatedArticles: [],
+    relatedArticles: [
+      {
+        title: 'Vàng 9999 có phải vàng 24K không?',
+        path: '/blog/vang-9999-co-phai-vang-24k-khong',
+        description:
+          'Giải thích mối liên hệ giữa vàng 9999 và vàng 24K theo độ tinh khiết và hệ karat.',
+      },
+      {
+        title: 'Vàng 24K và vàng 18K khác nhau thế nào?',
+        path: '/blog/vang-24k-va-vang-18k-khac-nhau-the-nao',
+        description:
+          'So sánh vàng 24K và 18K về hàm lượng vàng, độ cứng, mục đích sử dụng và giá trị.',
+      },
+    ],
 
     keywords: [
       'giá vàng 24K hôm nay',
@@ -886,6 +918,18 @@ export const goldSeoPages = {
         path: "/blog/gia-vang-the-gioi-anh-huong-gia-vang-viet-nam",
         description:
           "Giải thích mối liên hệ giữa giá vàng thế giới, tỷ giá USD/VND và giá vàng tại Việt Nam.",
+      },
+      {
+        title: 'Vàng 24K và vàng 18K khác nhau thế nào?',
+        path: '/blog/vang-24k-va-vang-18k-khac-nhau-the-nao',
+        description:
+          'So sánh vàng 24K và 18K về hàm lượng vàng, độ cứng, mục đích sử dụng và giá trị.',
+      },
+      {
+        title: 'Vàng 18K là gì? Có bao nhiêu phần trăm vàng?',
+        path: '/blog/vang-18k-la-gi-bao-nhieu-phan-tram-vang',
+        description:
+          'Giải thích vàng 18K, hàm lượng vàng 75% và vì sao loại vàng này phổ biến trong trang sức.',
       },
     ],
 

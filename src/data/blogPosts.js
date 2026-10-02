@@ -785,6 +785,395 @@ const blogPosts = [
             },
         ],
     },
+    {
+        slug: "vang-nhan-9999-la-gi",
+
+        title: "Vàng nhẫn 9999 là gì?",
+
+        description:
+            "Giải thích vàng nhẫn 9999 là gì, độ tinh khiết, đặc điểm và vì sao loại vàng này thường được dùng để tích trữ.",
+
+        excerpt:
+            "Vàng nhẫn 9999 là sản phẩm có độ tinh khiết rất cao và thường được lựa chọn để tích trữ. Tuy nhiên giá và spread có thể khác nhau giữa các thương hiệu.",
+
+        category: "Kiến thức vàng",
+
+        publishedAt: "2026-10-01",
+        updatedAt: "2026-10-01",
+
+        author: {
+            name: "Tony Nguyễn",
+            slug: "tony-nguyen",
+        },
+
+        heroImage: "/og/blog/vang-nhan-9999-la-gi.jpg",
+
+        sections: [
+            {
+                heading: "Vàng nhẫn 9999 là gì?",
+                paragraphs: [
+                    "Vàng nhẫn 9999 là sản phẩm vàng có độ tinh khiết rất cao, thường được chế tác dưới dạng nhẫn tròn trơn và được nhiều người lựa chọn để tích trữ.",
+                    "Con số 9999 thường được hiểu là hàm lượng vàng xấp xỉ 99,99%, tức phần lớn giá trị sản phẩm đến từ lượng vàng nguyên chất.",
+                ],
+            },
+            {
+                heading: "Vì sao vàng nhẫn 9999 thường được dùng để tích trữ?",
+                paragraphs: [
+                    "So với nhiều loại vàng trang sức, vàng nhẫn 9999 thường có ít yếu tố thiết kế và tiền công hơn, nên người mua tập trung nhiều hơn vào giá trị vàng.",
+                    "Đây cũng là lý do vàng nhẫn thường được theo dõi cùng với vàng SJC khi người mua quan tâm đến mục tiêu nắm giữ dài hạn.",
+                ],
+            },
+            {
+                heading: "Giá vàng nhẫn 9999 có giống nhau ở mọi nơi không?",
+                paragraphs: [
+                    "Không. Nhiều thương hiệu cùng bán vàng nhẫn 9999 nhưng giá mua vào, bán ra và mức chênh lệch có thể khác nhau.",
+                    "Khi so sánh, nên xem đồng thời giá bán, giá mua lại và spread thay vì chỉ nhìn một mức giá niêm yết.",
+                ],
+            },
+            {
+                heading: "Vàng nhẫn 9999 có phải vàng 24K không?",
+                paragraphs: [
+                    "Trong cách gọi phổ biến tại Việt Nam, vàng 9999 thường được xếp vào nhóm vàng 24K do có độ tinh khiết rất cao.",
+                    "Tuy nhiên, 24K mô tả độ tinh khiết, còn vàng nhẫn mô tả hình thức sản phẩm. Hai khái niệm này không hoàn toàn đồng nghĩa.",
+                ],
+            },
+            {
+                heading: "Nên theo dõi gì khi mua vàng nhẫn 9999?",
+                paragraphs: [
+                    "Người mua nên theo dõi giá mua vào, giá bán ra, mức chênh lệch mua bán và thương hiệu.",
+                    "Ngoài ra, so sánh với vàng SJC và giá vàng thế giới cũng giúp hiểu rõ hơn mức định giá của vàng nhẫn tại từng thời điểm.",
+                ],
+            },
+        ],
+
+        relatedLinks: [
+            {
+                label: "Giá vàng nhẫn 9999 hôm nay",
+                to: "/gia-vang-nhan-9999",
+            },
+            {
+                label: "Vàng 9999 có phải vàng 24K không?",
+                to: "/blog/vang-9999-co-phai-vang-24k-khong",
+            },
+            {
+                label: "Vàng nhẫn 9999 và vàng SJC khác nhau thế nào?",
+                to: "/blog/vang-nhan-9999-va-vang-sjc-khac-nhau-the-nao",
+            },
+        ],
+    },
+
+    {
+        slug: "vang-9999-co-phai-vang-24k-khong",
+
+        title: "Vàng 9999 có phải vàng 24K không?",
+
+        description:
+            "Giải thích mối liên hệ giữa vàng 9999 và vàng 24K, sự khác nhau giữa cách gọi theo độ tinh khiết và cách gọi theo karat.",
+
+        excerpt:
+            "Vàng 9999 và vàng 24K thường được dùng gần như cùng nghĩa trong cách gọi phổ biến, nhưng hai cách gọi xuất phát từ hai hệ phân loại khác nhau.",
+
+        category: "Kiến thức vàng",
+
+        publishedAt: "2026-10-01",
+        updatedAt: "2026-10-01",
+
+        author: {
+            name: "Tony Nguyễn",
+            slug: "tony-nguyen",
+        },
+
+        heroImage: "/og/blog/vang-9999-co-phai-vang-24k-khong.jpg",
+
+        sections: [
+            {
+                heading: "Vàng 9999 là gì?",
+                paragraphs: [
+                    "Vàng 9999 là cách gọi phổ biến cho loại vàng có độ tinh khiết rất cao, thường được hiểu là khoảng 99,99% vàng.",
+                    "Cách ghi 9999 tập trung vào hàm lượng vàng nguyên chất trong sản phẩm.",
+                ],
+            },
+            {
+                heading: "Vàng 24K là gì?",
+                paragraphs: [
+                    "Karat là hệ thống dùng để mô tả tỷ lệ vàng trong hợp kim. Theo cách tính này, 24K đại diện cho mức tinh khiết cao nhất trong thang karat.",
+                    "Do đó, vàng có độ tinh khiết rất cao như vàng 9999 thường được gọi là vàng 24K trong cách sử dụng thông thường.",
+                ],
+            },
+            {
+                heading: "9999 và 24K có hoàn toàn giống nhau không?",
+                paragraphs: [
+                    "Hai cách gọi rất gần nhau trong thực tế nhưng không phải cùng một hệ ký hiệu.",
+                    "9999 thể hiện độ tinh khiết theo tỷ lệ phần nghìn, còn 24K thể hiện độ tinh khiết theo hệ karat.",
+                ],
+            },
+            {
+                heading: "Vì sao người mua thường thấy cả hai cách gọi?",
+                paragraphs: [
+                    "Các cửa hàng và thương hiệu có thể sử dụng cách ghi 9999, 24K hoặc cả hai tùy loại sản phẩm và cách truyền thông.",
+                    "Người mua nên chú ý thông tin hàm lượng vàng cụ thể thay vì chỉ dựa vào tên gọi.",
+                ],
+            },
+            {
+                heading: "Vàng 9999 thường xuất hiện dưới dạng nào?",
+                paragraphs: [
+                    "Vàng 9999 có thể xuất hiện dưới nhiều dạng như vàng nhẫn, vàng miếng hoặc một số sản phẩm vàng có độ tinh khiết cao.",
+                    "Vì vậy, độ tinh khiết giống nhau không có nghĩa là giá bán, spread và thanh khoản của các sản phẩm đều giống nhau.",
+                ],
+            },
+        ],
+
+        relatedLinks: [
+            {
+                label: "Giá vàng 24K hôm nay",
+                to: "/gia-vang-24k",
+            },
+            {
+                label: "Giá vàng nhẫn 9999 hôm nay",
+                to: "/gia-vang-nhan-9999",
+            },
+            {
+                label: "Vàng 24K và vàng 18K khác nhau thế nào?",
+                to: "/blog/vang-24k-va-vang-18k-khac-nhau-the-nao",
+            },
+        ],
+    },
+
+    {
+        slug: "vang-nhan-9999-va-vang-sjc-khac-nhau-the-nao",
+
+        title: "Vàng nhẫn 9999 và vàng SJC khác nhau thế nào?",
+
+        description:
+            "So sánh vàng nhẫn 9999 và vàng SJC về hình thức, thương hiệu, giá mua bán, spread và cách thị trường định giá.",
+
+        excerpt:
+            "Vàng nhẫn 9999 và vàng SJC đều có hàm lượng vàng cao nhưng khác nhau về hình thức, thương hiệu, spread và mức định giá trên thị trường.",
+
+        category: "Kiến thức vàng",
+
+        publishedAt: "2026-10-01",
+        updatedAt: "2026-10-01",
+
+        author: {
+            name: "Tony Nguyễn",
+            slug: "tony-nguyen",
+        },
+
+        heroImage:
+            "/og/blog/vang-nhan-9999-va-vang-sjc-khac-nhau-the-nao.jpg",
+
+        sections: [
+            {
+                heading: "Điểm giống nhau giữa vàng nhẫn 9999 và SJC",
+                paragraphs: [
+                    "Cả vàng nhẫn 9999 và vàng miếng SJC đều thuộc nhóm sản phẩm có hàm lượng vàng cao và thường được quan tâm với mục đích tích trữ.",
+                    "Giá của cả hai đều chịu ảnh hưởng từ biến động của thị trường vàng nhưng không nhất thiết tăng giảm cùng một tỷ lệ.",
+                ],
+            },
+            {
+                heading: "Khác nhau về hình thức sản phẩm",
+                paragraphs: [
+                    "Vàng nhẫn 9999 thường được chế tác dưới dạng nhẫn tròn trơn, còn SJC phổ biến dưới dạng vàng miếng.",
+                    "Hình thức sản phẩm khác nhau có thể kéo theo sự khác biệt về thương hiệu, nhu cầu và cách thị trường định giá.",
+                ],
+            },
+            {
+                heading: "Khác nhau về thương hiệu",
+                paragraphs: [
+                    "SJC là thương hiệu cụ thể, trong khi vàng nhẫn 9999 có thể được sản xuất bởi nhiều doanh nghiệp khác nhau.",
+                    "Vì vậy, vàng nhẫn 9999 không có một mức giá duy nhất trên toàn thị trường.",
+                ],
+            },
+            {
+                heading: "Khác nhau về spread mua bán",
+                paragraphs: [
+                    "Chênh lệch giữa giá mua vào và bán ra của SJC và vàng nhẫn có thể khác nhau tùy thời điểm.",
+                    "Nếu người mua quan tâm đến giao dịch ngắn hạn, spread là yếu tố rất quan trọng vì nó ảnh hưởng trực tiếp đến điểm hòa vốn.",
+                ],
+            },
+            {
+                heading: "Nên so sánh SJC và vàng nhẫn như thế nào?",
+                paragraphs: [
+                    "Nên xem đồng thời giá mua vào, giá bán ra, spread, thương hiệu và mục tiêu nắm giữ.",
+                    "So sánh hai bảng giá trong cùng thời điểm giúp nhìn rõ hơn mức chênh lệch thực tế giữa hai sản phẩm.",
+                ],
+            },
+        ],
+
+        relatedLinks: [
+            {
+                label: "Giá vàng nhẫn 9999 hôm nay",
+                to: "/gia-vang-nhan-9999",
+            },
+            {
+                label: "Giá vàng SJC hôm nay",
+                to: "/gia-vang-sjc",
+            },
+            {
+                label: "Vàng nhẫn 9999 là gì?",
+                to: "/blog/vang-nhan-9999-la-gi",
+            },
+            {
+                label: "Vàng SJC và vàng nhẫn 9999 khác nhau thế nào?",
+                to: "/blog/vang-sjc-va-vang-nhan-9999-khac-nhau-the-nao",
+            },
+        ],
+    },
+
+    {
+        slug: "vang-24k-va-vang-18k-khac-nhau-the-nao",
+
+        title: "Vàng 24K và vàng 18K khác nhau thế nào?",
+
+        description:
+            "So sánh vàng 24K và vàng 18K về hàm lượng vàng, độ cứng, mục đích sử dụng, giá trị và sự phù hợp với tích trữ hoặc trang sức.",
+
+        excerpt:
+            "Vàng 24K có độ tinh khiết cao, còn vàng 18K chứa khoảng 75% vàng và được pha thêm kim loại để tăng độ cứng cho trang sức.",
+
+        category: "Kiến thức vàng",
+
+        publishedAt: "2026-10-01",
+        updatedAt: "2026-10-01",
+
+        author: {
+            name: "Tony Nguyễn",
+            slug: "tony-nguyen",
+        },
+
+        heroImage: "/og/blog/vang-24k-va-vang-18k-khac-nhau-the-nao.jpg",
+
+        sections: [
+            {
+                heading: "Vàng 24K là gì?",
+                paragraphs: [
+                    "Vàng 24K là loại vàng có độ tinh khiết rất cao và thường được liên hệ với vàng 9999 trong cách gọi phổ biến tại Việt Nam.",
+                    "Do hàm lượng vàng cao, vàng 24K thường mềm hơn và được quan tâm nhiều trong mục đích tích trữ.",
+                ],
+            },
+            {
+                heading: "Vàng 18K là gì?",
+                paragraphs: [
+                    "Vàng 18K chứa khoảng 75% vàng và 25% là các kim loại khác.",
+                    "Việc pha thêm kim loại giúp vàng 18K cứng hơn, phù hợp hơn cho chế tác trang sức và giữ hình dạng tốt hơn trong quá trình sử dụng.",
+                ],
+            },
+            {
+                heading: "Khác nhau về hàm lượng vàng",
+                paragraphs: [
+                    "Khác biệt lớn nhất nằm ở tỷ lệ vàng nguyên chất. Vàng 24K có tỷ lệ vàng cao hơn đáng kể so với vàng 18K.",
+                    "Do đó, nếu chỉ xét giá trị vàng theo trọng lượng thì 24K thường có giá trị cao hơn 18K.",
+                ],
+            },
+            {
+                heading: "Khác nhau về mục đích sử dụng",
+                paragraphs: [
+                    "Vàng 24K thường được chọn để tích trữ hoặc sử dụng cho các sản phẩm có hàm lượng vàng cao.",
+                    "Vàng 18K lại phổ biến hơn trong trang sức vì có độ cứng cao hơn và thuận tiện cho thiết kế.",
+                ],
+            },
+            {
+                heading: "Giá vàng 18K có phải luôn bằng 75% giá vàng 24K không?",
+                paragraphs: [
+                    "Nếu chỉ quy đổi theo hàm lượng vàng thì 18K tương đương khoảng 75% lượng vàng nguyên chất của 24K.",
+                    "Tuy nhiên, giá trang sức 18K thực tế còn có thể bao gồm tiền công, thiết kế, thương hiệu và các chi phí khác.",
+                ],
+            },
+        ],
+
+        relatedLinks: [
+            {
+                label: "Giá vàng 24K hôm nay",
+                to: "/gia-vang-24k",
+            },
+            {
+                label: "Giá vàng 18K hôm nay",
+                to: "/gia-vang-18k",
+            },
+            {
+                label: "Vàng 9999 có phải vàng 24K không?",
+                to: "/blog/vang-9999-co-phai-vang-24k-khong",
+            },
+        ],
+    },
+
+    {
+        slug: "vang-18k-la-gi-bao-nhieu-phan-tram-vang",
+
+        title: "Vàng 18K là gì? Có bao nhiêu phần trăm vàng?",
+
+        description:
+            "Giải thích vàng 18K là gì, hàm lượng vàng 75%, vì sao được dùng nhiều trong trang sức và cách hiểu giá vàng 18K.",
+
+        excerpt:
+            "Vàng 18K chứa khoảng 75% vàng nguyên chất và 25% kim loại khác. Đây là lý do vàng 18K cứng hơn và phổ biến trong chế tác trang sức.",
+
+        category: "Kiến thức vàng",
+
+        publishedAt: "2026-10-01",
+        updatedAt: "2026-10-01",
+
+        author: {
+            name: "Tony Nguyễn",
+            slug: "tony-nguyen",
+        },
+
+        heroImage: "/og/blog/vang-18k-la-gi-bao-nhieu-phan-tram-vang.jpg",
+
+        sections: [
+            {
+                heading: "Vàng 18K là gì?",
+                paragraphs: [
+                    "Vàng 18K là hợp kim vàng trong đó vàng nguyên chất chiếm khoảng 18 phần trên tổng số 24 phần.",
+                    "Quy đổi theo tỷ lệ, vàng 18K chứa khoảng 75% vàng và 25% còn lại là các kim loại khác.",
+                ],
+            },
+            {
+                heading: "Vì sao vàng 18K được pha thêm kim loại?",
+                paragraphs: [
+                    "Vàng nguyên chất khá mềm nên không phải lúc nào cũng phù hợp với các thiết kế trang sức cần độ cứng và khả năng giữ form.",
+                    "Việc pha thêm kim loại giúp sản phẩm 18K bền hơn và linh hoạt hơn trong chế tác.",
+                ],
+            },
+            {
+                heading: "Vàng 18K có phải vàng 750 không?",
+                paragraphs: [
+                    "Trong nhiều trường hợp, ký hiệu 750 được dùng để chỉ sản phẩm có khoảng 75% vàng nguyên chất.",
+                    "Vì vậy, vàng 18K và vàng 750 thường được dùng để mô tả mức hàm lượng vàng tương đương.",
+                ],
+            },
+            {
+                heading: "Giá vàng 18K được tính như thế nào?",
+                paragraphs: [
+                    "Nếu chỉ ước tính theo hàm lượng vàng, có thể tham khảo khoảng 75% giá của vàng 24K.",
+                    "Tuy nhiên, giá bán lẻ sản phẩm 18K có thể cao hơn do tiền công, thiết kế, đá quý, thương hiệu và các chi phí khác.",
+                ],
+            },
+            {
+                heading: "Vàng 18K có phù hợp để tích trữ không?",
+                paragraphs: [
+                    "Vàng 18K thường được sử dụng cho trang sức nhiều hơn là mục đích tích trữ vàng nguyên chất.",
+                    "Nếu mục tiêu chính là nắm giữ giá trị vàng, người mua thường quan tâm nhiều hơn đến các sản phẩm có hàm lượng vàng cao như 24K hoặc 9999.",
+                ],
+            },
+        ],
+
+        relatedLinks: [
+            {
+                label: "Giá vàng 18K hôm nay",
+                to: "/gia-vang-18k",
+            },
+            {
+                label: "Giá vàng 24K hôm nay",
+                to: "/gia-vang-24k",
+            },
+            {
+                label: "Vàng 24K và vàng 18K khác nhau thế nào?",
+                to: "/blog/vang-24k-va-vang-18k-khac-nhau-the-nao",
+            },
+        ],
+    },
 ];
 
 export default blogPosts;
