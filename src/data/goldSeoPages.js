@@ -137,6 +137,18 @@ export const goldSeoPages = {
         description:
           'Giải thích cách tính chênh lệch giữa giá vàng SJC và giá vàng thế giới sau quy đổi.',
       },
+      {
+        title: 'Chênh lệch mua bán vàng (spread) là gì?',
+        path: '/blog/chenh-lech-mua-ban-vang-spread-la-gi',
+        description:
+          'Giải thích spread vàng, cách tính và vì sao chênh lệch mua bán ảnh hưởng trực tiếp đến chi phí giao dịch.',
+      },
+      {
+        title: 'Giá mua vào và giá bán ra của vàng là gì?',
+        path: '/blog/gia-mua-vao-va-gia-ban-ra-cua-vang-la-gi',
+        description:
+          'Giải thích cách đọc giá mua vào, giá bán ra và mức giá cần quan tâm khi mua hoặc bán vàng.',
+      },
     ],
 
     keywords: [
@@ -274,6 +286,18 @@ export const goldSeoPages = {
         description:
           'So sánh vàng nhẫn 9999 và SJC về hình thức, thương hiệu, giá mua bán và spread.',
       },
+      {
+        title: 'Chênh lệch mua bán vàng (spread) là gì?',
+        path: '/blog/chenh-lech-mua-ban-vang-spread-la-gi',
+        description:
+          'Giải thích spread vàng và vì sao khoảng chênh lệch mua bán quan trọng khi giao dịch vàng nhẫn.',
+      },
+      {
+        title: 'Mua vàng bao nhiêu thì hòa vốn? Cách tính điểm hòa vốn',
+        path: '/blog/mua-vang-bao-nhieu-thi-hoa-von',
+        description:
+          'Hướng dẫn cách xác định điểm hòa vốn dựa trên giá mua ban đầu và giá mua vào hiện tại.',
+      },
     ],
 
     keywords: [
@@ -394,7 +418,14 @@ export const goldSeoPages = {
       },
     },
 
-    relatedArticles: [],
+    relatedArticles: [
+      {
+        title: 'Vì sao cùng là vàng nhưng mỗi nơi một giá?',
+        path: '/blog/vi-sao-cung-la-vang-nhung-moi-noi-mot-gia',
+        description:
+          'Giải thích vì sao giá vàng có thể khác nhau giữa PNJ, SJC, DOJI và các đơn vị khác dù hàm lượng vàng tương tự.',
+      },
+    ],
 
     keywords: [
       'giá vàng PNJ hôm nay',
@@ -514,7 +545,14 @@ export const goldSeoPages = {
       },
     },
 
-    relatedArticles: [],
+    relatedArticles: [
+      {
+        title: 'Vì sao cùng là vàng nhưng mỗi nơi một giá?',
+        path: '/blog/vi-sao-cung-la-vang-nhung-moi-noi-mot-gia',
+        description:
+          'Giải thích vì sao giá vàng có thể khác nhau giữa DOJI, SJC, PNJ và các đơn vị khác dù hàm lượng vàng tương tự.',
+      },
+    ],
 
     keywords: [
       'giá vàng DOJI hôm nay',

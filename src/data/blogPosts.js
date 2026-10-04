@@ -1174,6 +1174,317 @@ const blogPosts = [
             },
         ],
     },
+    {
+        slug: "chenh-lech-mua-ban-vang-spread-la-gi",
+
+        title: "Chênh lệch mua bán vàng (spread) là gì?",
+
+        description:
+            "Giải thích spread vàng là gì, cách tính chênh lệch giữa giá mua vào và bán ra, và vì sao spread ảnh hưởng trực tiếp đến chi phí giao dịch.",
+
+        excerpt:
+            "Spread là khoảng cách giữa giá bán ra và giá mua vào. Spread càng lớn, người mua càng cần mức tăng giá cao hơn để đạt điểm hòa vốn.",
+
+        category: "Kiến thức vàng",
+
+        publishedAt: "2026-10-03",
+        updatedAt: "2026-10-03",
+
+        author: {
+            name: "Tony Nguyễn",
+            slug: "tony-nguyen",
+        },
+
+        heroImage: "/og/blog/chenh-lech-mua-ban-vang-spread-la-gi.jpg",
+
+        sections: [
+            {
+                heading: "Spread vàng là gì?",
+                paragraphs: [
+                    "Spread vàng là khoảng chênh lệch giữa giá bán ra và giá mua vào của cùng một loại vàng tại cùng một thời điểm.",
+                    "Trong thực tế, người mua thường mua theo giá bán ra và khi bán lại sẽ nhận theo giá mua vào.",
+                ],
+            },
+            {
+                heading: "Cách tính spread vàng",
+                paragraphs: [
+                    "Công thức cơ bản là: spread = giá bán ra - giá mua vào.",
+                    "Ví dụ, nếu giá bán là 150 triệu đồng/lượng và giá mua là 147 triệu đồng/lượng thì spread là 3 triệu đồng/lượng.",
+                ],
+            },
+            {
+                heading: "Vì sao spread quan trọng?",
+                paragraphs: [
+                    "Spread thể hiện một phần chi phí mà người mua phải vượt qua trước khi có thể hòa vốn.",
+                    "Nếu spread lớn, giá vàng phải tăng nhiều hơn thì giá mua vào trong tương lai mới có thể vượt mức giá mà người mua đã trả.",
+                ],
+            },
+            {
+                heading: "Spread có giống nhau giữa các loại vàng không?",
+                paragraphs: [
+                    "Không. SJC, vàng nhẫn 9999, PNJ, DOJI hoặc các loại vàng khác có thể có mức spread khác nhau.",
+                    "Spread còn thay đổi theo thời điểm, thanh khoản, cung cầu và chính sách niêm yết của từng đơn vị.",
+                ],
+            },
+            {
+                heading: "Nên theo dõi spread như thế nào?",
+                paragraphs: [
+                    "Không nên chỉ nhìn giá vàng tăng hay giảm. Người mua nên xem đồng thời giá mua vào, giá bán ra và khoảng chênh lệch giữa hai mức này.",
+                    "Nếu mục tiêu là giao dịch trong thời gian ngắn, spread càng quan trọng vì nó ảnh hưởng trực tiếp đến điểm hòa vốn.",
+                ],
+            },
+        ],
+
+        relatedLinks: [
+            {
+                label: "Giá vàng SJC hôm nay",
+                to: "/gia-vang-sjc",
+            },
+            {
+                label: "Giá vàng nhẫn 9999 hôm nay",
+                to: "/gia-vang-nhan-9999",
+            },
+            {
+                label: "Giá mua vào và giá bán ra của vàng là gì?",
+                to: "/blog/gia-mua-vao-va-gia-ban-ra-cua-vang-la-gi",
+            },
+        ],
+    },
+
+    {
+        slug: "gia-mua-vao-va-gia-ban-ra-cua-vang-la-gi",
+
+        title: "Giá mua vào và giá bán ra của vàng là gì?",
+
+        description:
+            "Giải thích giá mua vào, giá bán ra của vàng và cách hiểu đúng hai mức giá khi theo dõi bảng giá vàng.",
+
+        excerpt:
+            "Giá mua vào là mức doanh nghiệp mua lại vàng từ khách hàng, còn giá bán ra là mức khách hàng phải trả khi mua vàng.",
+
+        category: "Kiến thức vàng",
+
+        publishedAt: "2026-10-03",
+        updatedAt: "2026-10-03",
+
+        author: {
+            name: "Tony Nguyễn",
+            slug: "tony-nguyen",
+        },
+
+        heroImage: "/og/blog/gia-mua-vao-va-gia-ban-ra-cua-vang-la-gi.jpg",
+
+        sections: [
+            {
+                heading: "Giá mua vào là gì?",
+                paragraphs: [
+                    "Giá mua vào là mức giá mà doanh nghiệp hoặc cửa hàng vàng sẵn sàng trả khi mua lại vàng từ khách hàng.",
+                    "Nếu bạn đang sở hữu vàng và muốn bán, mức giá cần quan tâm trước tiên thường là giá mua vào.",
+                ],
+            },
+            {
+                heading: "Giá bán ra là gì?",
+                paragraphs: [
+                    "Giá bán ra là mức giá mà doanh nghiệp niêm yết khi bán vàng cho khách hàng.",
+                    "Nếu bạn muốn mua vàng, đây là mức giá bạn thường phải trả tại thời điểm giao dịch.",
+                ],
+            },
+            {
+                heading: "Vì sao giá bán luôn cao hơn giá mua?",
+                paragraphs: [
+                    "Khoảng cách giữa hai mức giá giúp phản ánh chi phí giao dịch, thanh khoản, rủi ro biến động giá và chính sách kinh doanh của đơn vị bán vàng.",
+                    "Khoảng cách đó chính là spread mua bán.",
+                ],
+            },
+            {
+                heading: "Người mua nên nhìn mức giá nào?",
+                paragraphs: [
+                    "Nếu đang mua vàng, nên nhìn giá bán ra để biết chi phí thực tế phải trả.",
+                    "Nếu đang tính bán vàng, nên nhìn giá mua vào vì đó là mức tiền doanh nghiệp sẵn sàng trả lại cho bạn.",
+                ],
+            },
+            {
+                heading: "Sai lầm phổ biến khi đọc bảng giá vàng",
+                paragraphs: [
+                    "Một sai lầm phổ biến là chỉ nhìn giá bán ra tăng và cho rằng khoản đầu tư đã có lãi.",
+                    "Muốn biết đang lãi hay lỗ, cần so sánh giá mua vào hiện tại với mức giá bán ra mà bạn đã trả khi mua.",
+                ],
+            },
+        ],
+
+        relatedLinks: [
+            {
+                label: "Chênh lệch mua bán vàng (spread) là gì?",
+                to: "/blog/chenh-lech-mua-ban-vang-spread-la-gi",
+            },
+            {
+                label: "Mua vàng bao nhiêu thì hòa vốn?",
+                to: "/blog/mua-vang-bao-nhieu-thi-hoa-von",
+            },
+            {
+                label: "Giá vàng SJC hôm nay",
+                to: "/gia-vang-sjc",
+            },
+        ],
+    },
+
+    {
+        slug: "mua-vang-bao-nhieu-thi-hoa-von",
+
+        title: "Mua vàng bao nhiêu thì hòa vốn? Cách tính điểm hòa vốn",
+
+        description:
+            "Giải thích cách tính điểm hòa vốn khi mua vàng dựa trên giá bán lúc mua, giá mua vào hiện tại và mức chênh lệch mua bán.",
+
+        excerpt:
+            "Muốn biết mua vàng bao nhiêu thì hòa vốn, cần so sánh mức giá đã mua với giá mua vào mà thị trường sẵn sàng trả khi bạn bán lại.",
+
+        category: "Kiến thức vàng",
+
+        publishedAt: "2026-10-03",
+        updatedAt: "2026-10-03",
+
+        author: {
+            name: "Tony Nguyễn",
+            slug: "tony-nguyen",
+        },
+
+        heroImage: "/og/blog/mua-vang-bao-nhieu-thi-hoa-von.jpg",
+
+        sections: [
+            {
+                heading: "Điểm hòa vốn khi mua vàng là gì?",
+                paragraphs: [
+                    "Điểm hòa vốn là thời điểm mà mức tiền bạn có thể nhận khi bán vàng bằng với số tiền đã bỏ ra để mua.",
+                    "Do có chênh lệch giữa giá mua vào và bán ra, người mua thường chưa thể hòa vốn ngay sau khi giao dịch.",
+                ],
+            },
+            {
+                heading: "Cách tính hòa vốn đơn giản",
+                paragraphs: [
+                    "Nếu bạn mua theo giá bán ra, điểm hòa vốn đạt được khi giá mua vào trong tương lai tăng lên ít nhất bằng mức giá bạn đã trả.",
+                    "Ví dụ, nếu mua ở 150 triệu đồng/lượng thì chỉ hòa vốn khi giá mua vào sau đó đạt khoảng 150 triệu đồng/lượng, chưa tính thêm chi phí khác nếu có.",
+                ],
+            },
+            {
+                heading: "Spread ảnh hưởng thế nào đến hòa vốn?",
+                paragraphs: [
+                    "Spread càng lớn thì khoảng cách từ giá mua ban đầu đến mức giá có thể bán lại càng xa.",
+                    "Do đó, cùng một mức tăng của thị trường, sản phẩm có spread thấp hơn có thể tiến gần điểm hòa vốn nhanh hơn.",
+                ],
+            },
+            {
+                heading: "Có nên chỉ nhìn phần trăm tăng giá?",
+                paragraphs: [
+                    "Không nên. Giá niêm yết tăng chưa chắc đồng nghĩa người mua đã có lãi.",
+                    "Điểm quan trọng là giá mua vào hiện tại có vượt mức giá bán ra mà bạn đã mua hay chưa.",
+                ],
+            },
+            {
+                heading: "Theo dõi điểm hòa vốn như thế nào?",
+                paragraphs: [
+                    "Nên lưu lại giá mua thực tế và theo dõi giá mua vào hiện tại của đúng loại vàng đang nắm giữ.",
+                    "Nếu sau này giavang.today mở rộng phần portfolio, điểm hòa vốn có thể được tính tự động dựa trên giá vốn và giá mua vào hiện tại.",
+                ],
+            },
+        ],
+
+        relatedLinks: [
+            {
+                label: "Chênh lệch mua bán vàng (spread) là gì?",
+                to: "/blog/chenh-lech-mua-ban-vang-spread-la-gi",
+            },
+            {
+                label: "Giá mua vào và giá bán ra của vàng là gì?",
+                to: "/blog/gia-mua-vao-va-gia-ban-ra-cua-vang-la-gi",
+            },
+            {
+                label: "Giá vàng nhẫn 9999 hôm nay",
+                to: "/gia-vang-nhan-9999",
+            },
+        ],
+    },
+
+    {
+        slug: "vi-sao-cung-la-vang-nhung-moi-noi-mot-gia",
+
+        title: "Vì sao cùng là vàng nhưng mỗi nơi một giá?",
+
+        description:
+            "Giải thích vì sao giá vàng có thể khác nhau giữa các thương hiệu và cửa hàng dù sản phẩm có hàm lượng vàng tương tự.",
+
+        excerpt:
+            "Cùng là vàng có hàm lượng cao nhưng giá tại SJC, PNJ, DOJI hoặc các đơn vị khác vẫn có thể khác nhau do thương hiệu, sản phẩm, cung cầu và spread.",
+
+        category: "Kiến thức vàng",
+
+        publishedAt: "2026-10-03",
+        updatedAt: "2026-10-03",
+
+        author: {
+            name: "Tony Nguyễn",
+            slug: "tony-nguyen",
+        },
+
+        heroImage: "/og/blog/vi-sao-cung-la-vang-nhung-moi-noi-mot-gia.jpg",
+
+        sections: [
+            {
+                heading: "Hàm lượng vàng giống nhau không có nghĩa giá giống nhau",
+                paragraphs: [
+                    "Hai sản phẩm đều có hàm lượng vàng cao vẫn có thể có giá niêm yết khác nhau.",
+                    "Giá bán lẻ không chỉ phản ánh lượng vàng nguyên chất mà còn chịu ảnh hưởng bởi loại sản phẩm, thương hiệu và điều kiện thị trường.",
+                ],
+            },
+            {
+                heading: "Thương hiệu ảnh hưởng đến giá như thế nào?",
+                paragraphs: [
+                    "Mỗi thương hiệu có hệ thống phân phối, chính sách mua lại, sản phẩm và mức độ nhận diện khác nhau.",
+                    "Những yếu tố này có thể khiến thị trường chấp nhận mức giá khác nhau cho các sản phẩm có hàm lượng vàng tương tự.",
+                ],
+            },
+            {
+                heading: "Cung cầu của từng loại vàng",
+                paragraphs: [
+                    "Nhu cầu đối với vàng miếng SJC, vàng nhẫn 9999 hay một dòng sản phẩm của PNJ và DOJI không phải lúc nào cũng giống nhau.",
+                    "Khi cung cầu thay đổi, mức chênh lệch giữa các loại vàng cũng có thể mở rộng hoặc thu hẹp.",
+                ],
+            },
+            {
+                heading: "Spread của từng nơi cũng khác nhau",
+                paragraphs: [
+                    "Mỗi đơn vị có thể niêm yết giá mua vào và bán ra với khoảng chênh lệch khác nhau.",
+                    "Do đó, một nơi có giá bán thấp hơn chưa chắc đã có điều kiện mua lại tốt hơn.",
+                ],
+            },
+            {
+                heading: "Nên so sánh giá vàng như thế nào?",
+                paragraphs: [
+                    "Nên so sánh đúng cùng loại sản phẩm và cùng thời điểm, đồng thời nhìn cả giá mua vào lẫn bán ra.",
+                    "Nếu mục tiêu là tích trữ hoặc đầu tư, nên quan tâm thêm đến spread, khả năng mua lại và mức độ thanh khoản của sản phẩm.",
+                ],
+            },
+        ],
+
+        relatedLinks: [
+            {
+                label: "Giá vàng SJC hôm nay",
+                to: "/gia-vang-sjc",
+            },
+            {
+                label: "Giá vàng PNJ hôm nay",
+                to: "/gia-vang-pnj",
+            },
+            {
+                label: "Giá vàng DOJI hôm nay",
+                to: "/gia-vang-doji",
+            },
+            {
+                label: "Chênh lệch mua bán vàng (spread) là gì?",
+                to: "/blog/chenh-lech-mua-ban-vang-spread-la-gi",
+            },
+        ],
+    },
 ];
 
 export default blogPosts;
