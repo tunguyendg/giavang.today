@@ -1485,6 +1485,322 @@ const blogPosts = [
             },
         ],
     },
+    {
+        slug: "pnj-la-gi-gia-vang-pnj-khac-sjc-the-nao",
+
+        title: "PNJ là gì? Giá vàng PNJ khác SJC thế nào?",
+
+        description:
+            "Giải thích PNJ là gì, đặc điểm của giá vàng PNJ và những điểm khác biệt khi so sánh với vàng SJC.",
+
+        excerpt:
+            "PNJ là một thương hiệu vàng và trang sức lớn tại Việt Nam. Giá PNJ có thể khác SJC do loại sản phẩm, thương hiệu, spread và cách thị trường định giá.",
+
+        category: "Kiến thức vàng",
+
+        publishedAt: "2026-10-04",
+        updatedAt: "2026-10-04",
+
+        author: {
+            name: "Tony Nguyễn",
+            slug: "tony-nguyen",
+        },
+
+        heroImage: "/og/blog/pnj-la-gi-gia-vang-pnj-khac-sjc-the-nao.jpg",
+
+        sections: [
+            {
+                heading: "PNJ là gì?",
+                paragraphs: [
+                    "PNJ là một trong những thương hiệu lớn tại Việt Nam trong lĩnh vực vàng bạc, trang sức và các sản phẩm liên quan.",
+                    "Trên thị trường vàng, người dùng thường theo dõi giá PNJ cùng với SJC, DOJI và vàng nhẫn 9999 để so sánh mức giá và biến động.",
+                ],
+            },
+            {
+                heading: "Giá vàng PNJ có phải một mức giá duy nhất không?",
+                paragraphs: [
+                    "Không. PNJ có nhiều loại sản phẩm vàng khác nhau và mỗi sản phẩm có thể có mức giá mua vào, bán ra riêng.",
+                    "Do đó, khi nói đến giá vàng PNJ cần xác định đúng loại sản phẩm đang được so sánh.",
+                ],
+            },
+            {
+                heading: "Giá PNJ khác SJC ở điểm nào?",
+                paragraphs: [
+                    "SJC và PNJ khác nhau về thương hiệu, dòng sản phẩm, nhu cầu thị trường và cách niêm yết giá.",
+                    "Ngay cả khi hai sản phẩm có hàm lượng vàng tương tự, giá mua vào, bán ra và spread vẫn có thể khác nhau.",
+                ],
+            },
+            {
+                heading: "Spread PNJ có quan trọng không?",
+                paragraphs: [
+                    "Có. Chênh lệch giữa giá mua vào và bán ra ảnh hưởng trực tiếp đến chi phí nếu người mua bán lại trong thời gian ngắn.",
+                    "Vì vậy, khi so sánh PNJ với SJC không nên chỉ nhìn giá bán ra mà cần xem cả spread.",
+                ],
+            },
+            {
+                heading: "Nên so sánh PNJ và SJC như thế nào?",
+                paragraphs: [
+                    "Nên so sánh đúng cùng thời điểm và, nếu có thể, cùng nhóm sản phẩm có hàm lượng vàng tương đương.",
+                    "Ngoài giá mua và bán, nên xem thêm spread, tính thanh khoản, thương hiệu và mục tiêu nắm giữ.",
+                ],
+            },
+        ],
+
+        relatedLinks: [
+            {
+                label: "Giá vàng PNJ hôm nay",
+                to: "/gia-vang-pnj",
+            },
+            {
+                label: "Giá vàng SJC hôm nay",
+                to: "/gia-vang-sjc",
+            },
+            {
+                label: "Vì sao cùng là vàng nhưng mỗi nơi một giá?",
+                to: "/blog/vi-sao-cung-la-vang-nhung-moi-noi-mot-gia",
+            },
+        ],
+    },
+
+    {
+        slug: "doji-la-gi-gia-vang-doji-khac-sjc-the-nao",
+
+        title: "DOJI là gì? Giá vàng DOJI khác SJC thế nào?",
+
+        description:
+            "Giải thích DOJI là gì, cách hiểu giá vàng DOJI và những điểm khác biệt khi so sánh với vàng SJC.",
+
+        excerpt:
+            "DOJI là một thương hiệu vàng và trang sức lớn tại Việt Nam. Giá DOJI có thể khác SJC do sản phẩm, khu vực, spread và điều kiện thị trường.",
+
+        category: "Kiến thức vàng",
+
+        publishedAt: "2026-10-04",
+        updatedAt: "2026-10-04",
+
+        author: {
+            name: "Tony Nguyễn",
+            slug: "tony-nguyen",
+        },
+
+        heroImage: "/og/blog/doji-la-gi-gia-vang-doji-khac-sjc-the-nao.jpg",
+
+        sections: [
+            {
+                heading: "DOJI là gì?",
+                paragraphs: [
+                    "DOJI là một thương hiệu lớn trong lĩnh vực vàng bạc, đá quý và trang sức tại Việt Nam.",
+                    "Giá vàng DOJI thường được người dùng theo dõi cùng với SJC, PNJ và vàng nhẫn 9999 để tham khảo thị trường.",
+                ],
+            },
+            {
+                heading: "Giá vàng DOJI được niêm yết như thế nào?",
+                paragraphs: [
+                    "DOJI có thể niêm yết giá theo nhiều dòng sản phẩm và khu vực khác nhau.",
+                    "Vì vậy, khi so sánh giá cần xác định đúng sản phẩm, đơn vị và thời điểm để tránh so sánh sai.",
+                ],
+            },
+            {
+                heading: "DOJI và SJC khác nhau ở điểm nào?",
+                paragraphs: [
+                    "DOJI và SJC là hai thương hiệu khác nhau và có thể có danh mục sản phẩm, mức spread và cách thị trường định giá khác nhau.",
+                    "Mức giá cao hơn hoặc thấp hơn tại một thời điểm không tự động cho biết sản phẩm nào phù hợp hơn với mọi người mua.",
+                ],
+            },
+            {
+                heading: "Vì sao spread DOJI có thể khác SJC?",
+                paragraphs: [
+                    "Spread chịu ảnh hưởng bởi thanh khoản, cung cầu và chính sách niêm yết của từng thương hiệu.",
+                    "Do đó, khoảng chênh lệch mua bán của DOJI có thể khác SJC ngay trong cùng một ngày.",
+                ],
+            },
+            {
+                heading: "Nên so sánh DOJI và SJC như thế nào?",
+                paragraphs: [
+                    "Nên nhìn đồng thời giá mua vào, bán ra, spread và loại sản phẩm đang được so sánh.",
+                    "Nếu mục tiêu là tích trữ, nên quan tâm thêm đến khả năng mua lại, thương hiệu và mức độ thanh khoản.",
+                ],
+            },
+        ],
+
+        relatedLinks: [
+            {
+                label: "Giá vàng DOJI hôm nay",
+                to: "/gia-vang-doji",
+            },
+            {
+                label: "Giá vàng SJC hôm nay",
+                to: "/gia-vang-sjc",
+            },
+            {
+                label: "Vì sao cùng là vàng nhưng mỗi nơi một giá?",
+                to: "/blog/vi-sao-cung-la-vang-nhung-moi-noi-mot-gia",
+            },
+        ],
+    },
+
+    {
+        slug: "nen-so-sanh-gia-vang-giua-cac-thuong-hieu-the-nao",
+
+        title: "Nên so sánh giá vàng giữa các thương hiệu như thế nào?",
+
+        description:
+            "Hướng dẫn cách so sánh giá vàng giữa SJC, PNJ, DOJI và các thương hiệu khác dựa trên đúng sản phẩm, spread và mục tiêu giao dịch.",
+
+        excerpt:
+            "So sánh giá vàng giữa các thương hiệu không nên chỉ nhìn một con số. Cần so sánh đúng loại sản phẩm, cùng thời điểm và cả giá mua vào lẫn bán ra.",
+
+        category: "Kiến thức vàng",
+
+        publishedAt: "2026-10-04",
+        updatedAt: "2026-10-04",
+
+        author: {
+            name: "Tony Nguyễn",
+            slug: "tony-nguyen",
+        },
+
+        heroImage:
+            "/og/blog/nen-so-sanh-gia-vang-giua-cac-thuong-hieu-the-nao.jpg",
+
+        sections: [
+            {
+                heading: "Không nên chỉ nhìn giá bán ra",
+                paragraphs: [
+                    "Giá bán ra cho biết mức tiền cần trả khi mua vàng, nhưng chưa phản ánh đầy đủ chi phí giao dịch.",
+                    "Muốn so sánh chính xác hơn, cần nhìn thêm giá mua vào và khoảng spread của từng thương hiệu.",
+                ],
+            },
+            {
+                heading: "Phải so sánh đúng cùng loại sản phẩm",
+                paragraphs: [
+                    "Không nên so sánh trực tiếp giá vàng miếng với vàng nhẫn hoặc vàng trang sức rồi kết luận nơi nào đắt hơn.",
+                    "Nên chọn các sản phẩm có hàm lượng vàng và hình thức tương đương để kết quả so sánh có ý nghĩa.",
+                ],
+            },
+            {
+                heading: "So sánh trong cùng thời điểm",
+                paragraphs: [
+                    "Giá vàng có thể thay đổi nhanh trong ngày, vì vậy các mức giá lấy ở những thời điểm khác nhau có thể gây hiểu nhầm.",
+                    "Nếu muốn so sánh SJC, PNJ và DOJI, nên lấy dữ liệu trong cùng khoảng thời gian.",
+                ],
+            },
+            {
+                heading: "Spread quan trọng hơn nhiều người nghĩ",
+                paragraphs: [
+                    "Một nơi có giá bán thấp hơn nhưng giá mua lại cũng thấp hơn đáng kể thì chưa chắc có lợi hơn.",
+                    "Spread giúp đánh giá chi phí khi mua rồi bán lại và đặc biệt quan trọng với người nắm giữ ngắn hạn.",
+                ],
+            },
+            {
+                heading: "Mục tiêu mua vàng cũng ảnh hưởng đến lựa chọn",
+                paragraphs: [
+                    "Người mua để tích trữ có thể quan tâm nhiều đến thanh khoản, spread và khả năng mua lại.",
+                    "Người mua trang sức lại có thể quan tâm thêm đến thiết kế, thương hiệu và chi phí chế tác.",
+                ],
+            },
+        ],
+
+        relatedLinks: [
+            {
+                label: "Giá vàng SJC hôm nay",
+                to: "/gia-vang-sjc",
+            },
+            {
+                label: "Giá vàng PNJ hôm nay",
+                to: "/gia-vang-pnj",
+            },
+            {
+                label: "Giá vàng DOJI hôm nay",
+                to: "/gia-vang-doji",
+            },
+            {
+                label: "Chênh lệch mua bán vàng (spread) là gì?",
+                to: "/blog/chenh-lech-mua-ban-vang-spread-la-gi",
+            },
+        ],
+    },
+
+    {
+        slug: "cach-doc-bang-gia-vang-sjc-pnj-doji",
+
+        title: "Cách đọc bảng giá vàng SJC, PNJ và DOJI",
+
+        description:
+            "Hướng dẫn cách đọc bảng giá vàng SJC, PNJ và DOJI: giá mua vào, bán ra, spread và cách so sánh giữa các thương hiệu.",
+
+        excerpt:
+            "Bảng giá vàng thường có giá mua vào và bán ra. Hiểu đúng hai cột này giúp người dùng biết mình đang mua ở mức nào và bán lại ở mức nào.",
+
+        category: "Kiến thức vàng",
+
+        publishedAt: "2026-10-04",
+        updatedAt: "2026-10-04",
+
+        author: {
+            name: "Tony Nguyễn",
+            slug: "tony-nguyen",
+        },
+
+        heroImage: "/og/blog/cach-doc-bang-gia-vang-sjc-pnj-doji.jpg",
+
+        sections: [
+            {
+                heading: "Một bảng giá vàng thường có những gì?",
+                paragraphs: [
+                    "Bảng giá vàng thường hiển thị tên sản phẩm, giá mua vào và giá bán ra.",
+                    "Một số bảng còn chia theo thương hiệu, khu vực, loại vàng hoặc trọng lượng sản phẩm.",
+                ],
+            },
+            {
+                heading: "Cột mua vào nghĩa là gì?",
+                paragraphs: [
+                    "Giá mua vào là mức mà doanh nghiệp sẵn sàng trả khi mua lại vàng từ khách hàng.",
+                    "Nếu bạn đang muốn bán vàng thì đây là cột cần quan tâm trực tiếp.",
+                ],
+            },
+            {
+                heading: "Cột bán ra nghĩa là gì?",
+                paragraphs: [
+                    "Giá bán ra là mức mà khách hàng phải trả khi mua vàng từ doanh nghiệp.",
+                    "Nếu bạn đang muốn mua vàng thì đây là mức chi phí cơ bản cần xem.",
+                ],
+            },
+            {
+                heading: "Cách đọc spread ngay trên bảng giá",
+                paragraphs: [
+                    "Lấy giá bán ra trừ giá mua vào sẽ cho ra mức chênh lệch mua bán.",
+                    "Spread càng lớn thì giá vàng phải tăng nhiều hơn trước khi người mua có thể hòa vốn khi bán lại.",
+                ],
+            },
+            {
+                heading: "Cách so sánh SJC, PNJ và DOJI",
+                paragraphs: [
+                    "Nên so sánh cùng loại sản phẩm, cùng đơn vị và cùng thời điểm.",
+                    "Ngoài mức giá, nên xem thêm spread và khả năng mua lại để tránh kết luận chỉ dựa trên một con số niêm yết.",
+                ],
+            },
+        ],
+
+        relatedLinks: [
+            {
+                label: "Giá vàng SJC hôm nay",
+                to: "/gia-vang-sjc",
+            },
+            {
+                label: "Giá vàng PNJ hôm nay",
+                to: "/gia-vang-pnj",
+            },
+            {
+                label: "Giá vàng DOJI hôm nay",
+                to: "/gia-vang-doji",
+            },
+            {
+                label: "Giá mua vào và giá bán ra của vàng là gì?",
+                to: "/blog/gia-mua-vao-va-gia-ban-ra-cua-vang-la-gi",
+            },
+        ],
+    },
 ];
 
 export default blogPosts;

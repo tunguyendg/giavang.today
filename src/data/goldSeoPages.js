@@ -149,6 +149,24 @@ export const goldSeoPages = {
         description:
           'Giải thích cách đọc giá mua vào, giá bán ra và mức giá cần quan tâm khi mua hoặc bán vàng.',
       },
+      {
+        title: "PNJ là gì? Giá vàng PNJ khác SJC thế nào?",
+        path: "/blog/pnj-la-gi-gia-vang-pnj-khac-sjc-the-nao",
+        description:
+          "Tìm hiểu PNJ là gì và những điểm khác biệt khi so sánh giá vàng PNJ với SJC.",
+      },
+      {
+        title: "DOJI là gì? Giá vàng DOJI khác SJC thế nào?",
+        path: "/blog/doji-la-gi-gia-vang-doji-khac-sjc-the-nao",
+        description:
+          "Tìm hiểu DOJI là gì và cách so sánh giá vàng DOJI với SJC theo đúng sản phẩm và thời điểm.",
+      },
+      {
+        title: "Cách đọc bảng giá vàng SJC, PNJ và DOJI",
+        path: "/blog/cach-doc-bang-gia-vang-sjc-pnj-doji",
+        description:
+          "Hướng dẫn cách đọc giá mua vào, bán ra và spread trên bảng giá vàng của SJC, PNJ và DOJI.",
+      },
     ],
 
     keywords: [
@@ -425,6 +443,24 @@ export const goldSeoPages = {
         description:
           'Giải thích vì sao giá vàng có thể khác nhau giữa PNJ, SJC, DOJI và các đơn vị khác dù hàm lượng vàng tương tự.',
       },
+      {
+        title: "PNJ là gì? Giá vàng PNJ khác SJC thế nào?",
+        path: "/blog/pnj-la-gi-gia-vang-pnj-khac-sjc-the-nao",
+        description:
+          "Giải thích PNJ là gì, cách hiểu giá vàng PNJ và những điểm khác biệt khi so sánh với SJC.",
+      },
+      {
+        title: "Nên so sánh giá vàng giữa các thương hiệu như thế nào?",
+        path: "/blog/nen-so-sanh-gia-vang-giua-cac-thuong-hieu-the-nao",
+        description:
+          "Hướng dẫn cách so sánh giá vàng giữa PNJ, SJC, DOJI dựa trên đúng sản phẩm, thời điểm và spread.",
+      },
+      {
+        title: "Cách đọc bảng giá vàng SJC, PNJ và DOJI",
+        path: "/blog/cach-doc-bang-gia-vang-sjc-pnj-doji",
+        description:
+          "Hướng dẫn cách đọc giá mua vào, bán ra và mức chênh lệch trên bảng giá vàng PNJ, SJC và DOJI.",
+      },
     ],
 
     keywords: [
@@ -551,6 +587,24 @@ export const goldSeoPages = {
         path: '/blog/vi-sao-cung-la-vang-nhung-moi-noi-mot-gia',
         description:
           'Giải thích vì sao giá vàng có thể khác nhau giữa DOJI, SJC, PNJ và các đơn vị khác dù hàm lượng vàng tương tự.',
+      },
+      {
+        title: "DOJI là gì? Giá vàng DOJI khác SJC thế nào?",
+        path: "/blog/doji-la-gi-gia-vang-doji-khac-sjc-the-nao",
+        description:
+          "Giải thích DOJI là gì, cách hiểu giá vàng DOJI và những điểm khác biệt khi so sánh với SJC.",
+      },
+      {
+        title: "Nên so sánh giá vàng giữa các thương hiệu như thế nào?",
+        path: "/blog/nen-so-sanh-gia-vang-giua-cac-thuong-hieu-the-nao",
+        description:
+          "Hướng dẫn cách so sánh giá vàng giữa DOJI, SJC, PNJ dựa trên đúng sản phẩm, thời điểm và spread.",
+      },
+      {
+        title: "Cách đọc bảng giá vàng SJC, PNJ và DOJI",
+        path: "/blog/cach-doc-bang-gia-vang-sjc-pnj-doji",
+        description:
+          "Hướng dẫn cách đọc giá mua vào, bán ra và mức chênh lệch trên bảng giá vàng DOJI, SJC và PNJ.",
       },
     ],
 
