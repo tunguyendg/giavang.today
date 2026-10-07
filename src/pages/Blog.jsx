@@ -1,9 +1,44 @@
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import Seo from "../seo/Seo";
 import blogPosts from "../data/blogPosts";
 
 export default function Blog() {
+    const [searchParams, setSearchParams] = useSearchParams();
+
+    const POSTS_PER_PAGE = 4;
+
+    const currentPage = Math.max(
+        1,
+        Number(searchParams.get("page")) || 1
+    );
+
+    const totalPages = Math.ceil(blogPosts.length / POSTS_PER_PAGE);
+
+    const safePage = Math.min(currentPage, totalPages || 1);
+
+    const startIndex = (safePage - 1) * POSTS_PER_PAGE;
+
+    const visiblePosts = blogPosts.slice(
+        startIndex,
+        startIndex + POSTS_PER_PAGE
+    );
+
+    const goToPage = (page) => {
+        if (page < 1 || page > totalPages) return;
+
+        if (page === 1) {
+            setSearchParams({});
+        } else {
+            setSearchParams({ page: String(page) });
+        }
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    };
     return (
+
         <>
             <Seo
                 title="Blog kiến thức vàng"
@@ -27,7 +62,7 @@ export default function Blog() {
                 </section>
 
                 <section className="blog-grid">
-                    {blogPosts.map((post) => (
+                    {visiblePosts.map((post) => (
                         <article
                             key={post.slug}
                             className="blog-card"
@@ -78,6 +113,46 @@ export default function Blog() {
                         </article>
                     ))}
                 </section>
+                {totalPages > 1 && (
+                    <nav className="blog-pagination" aria-label="Phân trang blog">
+                        <button
+                            type="button"
+                            onClick={() => goToPage(safePage - 1)}
+                            disabled={safePage === 1}
+                            className="blog-pagination-button"
+                        >
+                            ← Trước
+                        </button>
+
+                        <div className="blog-pagination-pages">
+                            {Array.from({ length: totalPages }, (_, index) => {
+                                const page = index + 1;
+
+                                return (
+                                    <button
+                                        key={page}
+                                        type="button"
+                                        onClick={() => goToPage(page)}
+                                        className={`blog-pagination-number ${safePage === page ? "active" : ""
+                                            }`}
+                                        aria-current={safePage === page ? "page" : undefined}
+                                    >
+                                        {page}
+                                    </button>
+                                );
+                            })}
+                        </div>
+
+                        <button
+                            type="button"
+                            onClick={() => goToPage(safePage + 1)}
+                            disabled={safePage === totalPages}
+                            className="blog-pagination-button"
+                        >
+                            Sau →
+                        </button>
+                    </nav>
+                )}
             </main>
         </>
     );

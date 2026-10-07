@@ -1243,3 +1243,149 @@
   border-color: rgba(243, 194, 27, 0.55);
   background: #151c33;
 }
+
+/* =========================
+   BLOG GRID V2
+========================= */
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  align-items: stretch;
+}
+
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.blog-card-image-link {
+  display: block;
+  overflow: hidden;
+}
+
+.blog-card-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1200 / 630;
+  object-fit: cover;
+  transition: transform 0.25s ease;
+}
+
+.blog-card:hover .blog-card-image {
+  transform: scale(1.02);
+}
+
+/* nếu phần text của card có wrapper riêng thì giữ nguyên padding hiện tại */
+
+.blog-card h2,
+.blog-card h3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.blog-card p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+/* =========================
+   BLOG PAGINATION
+========================= */
+
+.blog-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  margin: 42px auto 20px;
+}
+
+.blog-pagination-pages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.blog-pagination-button,
+.blog-pagination-number {
+  min-width: 42px;
+  height: 42px;
+  padding: 0 14px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+
+  background: #11172c;
+  color: #e8eaf2;
+
+  font: inherit;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.blog-pagination-button:hover:not(:disabled),
+.blog-pagination-number:hover {
+  border-color: rgba(243, 194, 27, 0.6);
+  color: #f3c21b;
+  transform: translateY(-1px);
+}
+
+.blog-pagination-number.active {
+  background: #f3c21b;
+  border-color: #f3c21b;
+  color: #11172c;
+}
+
+.blog-pagination-button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .blog-pagination {
+    gap: 8px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+  }
+
+  .blog-pagination-button,
+  .blog-pagination-number {
+    min-width: 38px;
+    height: 38px;
+    padding: 0 11px;
+  }
+}
+
+.blog-pagination {
+  margin: 30px auto 20px;
+}
