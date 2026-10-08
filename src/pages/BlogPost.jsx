@@ -16,6 +16,7 @@ export default function BlogPost() {
                 <Seo
                     title="Không tìm thấy bài viết"
                     description="Bài viết không tồn tại."
+                    path={`/blog/${slug}`}
                     noindex
                 />
 

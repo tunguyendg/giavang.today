@@ -86,6 +86,10 @@ const blogPosts = [
                 label: "Giá vàng thế giới",
                 to: "/gia-vang-the-gioi",
             },
+            {
+                label: "Premium SJC là gì?",
+                to: "/blog/premium-sjc-la-gi",
+            },
         ],
     },
     {
@@ -161,6 +165,10 @@ const blogPosts = [
             {
                 label: "Tại sao giá vàng SJC cao hơn giá vàng thế giới?",
                 to: "/blog/tai-sao-gia-vang-sjc-cao-hon-gia-vang-the-gioi",
+            },
+            {
+                label: "Vì sao giá vàng thế giới biến động?",
+                to: "/blog/vi-sao-gia-vang-the-gioi-bien-dong",
             },
         ],
     },
@@ -239,6 +247,10 @@ const blogPosts = [
                 label: "XAU/USD là gì?",
                 to: "/blog/gia-vang-the-gioi-la-gi-xau-usd-la-gi",
             },
+            {
+                label: "Troy ounce là gì? 1 ounce vàng bao nhiêu gram?",
+                to: "/blog/troy-ounce-la-gi-1-ounce-vang-bao-nhieu-gram",
+            },
         ],
     },
 
@@ -248,7 +260,7 @@ const blogPosts = [
         title: "Troy ounce là gì? 1 ounce vàng bằng bao nhiêu gram?",
 
         description:
-            "Giải thích troy ounce là gì, 1 ounce vàng bằng bao nhiêu gram và cách đổi từ ounce sang lượng, chỉ khi theo dõi giá vàng.",
+            "Giải thích troy ounce là gì, 1 ounce vàng bằng bao nhiêu gram và cách đổi từ ounce sang lượng khi theo dõi giá vàng.",
 
         excerpt:
             "Giá vàng quốc tế sử dụng troy ounce chứ không phải ounce thông thường. Một troy ounce vàng tương đương khoảng 31.1035 gram.",
@@ -399,7 +411,7 @@ const blogPosts = [
     {
         slug: "gia-vang-the-gioi-anh-huong-gia-vang-viet-nam",
 
-        title: "Giá vàng thế giới ảnh hưởng đến giá vàng Việt Nam như thế nào?",
+        title: "Giá vàng thế giới ảnh hưởng giá vàng Việt Nam thế nào?",
 
         description:
             "Giải thích mối liên hệ giữa giá vàng thế giới và giá vàng tại Việt Nam, vai trò của tỷ giá, cung cầu và mức chênh lệch trong nước.",
@@ -554,7 +566,7 @@ const blogPosts = [
     {
         slug: "premium-sjc-la-gi",
 
-        title: "Premium SJC là gì? Cách tính chênh lệch với giá vàng thế giới",
+        title: "Premium SJC là gì? Cách tính chênh lệch giá",
 
         description:
             "Giải thích premium SJC là gì, cách tính mức chênh lệch giữa giá vàng SJC và giá vàng thế giới sau khi quy đổi sang VND/lượng.",
@@ -856,7 +868,7 @@ const blogPosts = [
                 to: "/blog/vang-9999-co-phai-vang-24k-khong",
             },
             {
-                label: "Vàng nhẫn 9999 và vàng SJC khác nhau thế nào?",
+                label: "Nên mua vàng SJC hay vàng nhẫn 9999 để tích trữ?",
                 to: "/blog/vang-nhan-9999-va-vang-sjc-khac-nhau-the-nao",
             },
         ],
@@ -942,13 +954,13 @@ const blogPosts = [
     {
         slug: "vang-nhan-9999-va-vang-sjc-khac-nhau-the-nao",
 
-        title: "Vàng nhẫn 9999 và vàng SJC khác nhau thế nào?",
+        title: "Nên mua vàng SJC hay vàng nhẫn 9999 để tích trữ?",
 
         description:
-            "So sánh vàng nhẫn 9999 và vàng SJC về hình thức, thương hiệu, giá mua bán, spread và cách thị trường định giá.",
+            "So sánh vàng SJC và vàng nhẫn 9999 theo mục tiêu tích trữ, spread, tính thanh khoản, thương hiệu và khả năng mua bán lại.",
 
         excerpt:
-            "Vàng nhẫn 9999 và vàng SJC đều có hàm lượng vàng cao nhưng khác nhau về hình thức, thương hiệu, spread và mức định giá trên thị trường.",
+            "Vàng SJC và vàng nhẫn 9999 đều có thể dùng để tích trữ, nhưng khác nhau về spread, thanh khoản, thương hiệu và mức giá mua bán lại.",
 
         category: "Kiến thức vàng",
 
@@ -1094,6 +1106,10 @@ const blogPosts = [
             {
                 label: "Vàng 9999 có phải vàng 24K không?",
                 to: "/blog/vang-9999-co-phai-vang-24k-khong",
+            },
+            {
+                label: "Vàng 18K là gì? Có bao nhiêu phần trăm vàng?",
+                to: "/blog/vang-18k-la-gi-bao-nhieu-phan-tram-vang",
             },
         ],
     },

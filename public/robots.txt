@@ -1,11 +1,4 @@
 User-agent: *
 Allow: /
 
-Disallow: /login
-Disallow: /portfolio
-Disallow: /alerts
-Disallow: /account
-Disallow: /verify-email
-Disallow: /telegram
-
 Sitemap: https://giavang.today/sitemap.xml

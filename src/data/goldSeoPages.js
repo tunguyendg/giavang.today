@@ -220,10 +220,10 @@ export const goldSeoPages = {
     },
 
     comparison: {
-      title: 'Vàng nhẫn 9999 và vàng SJC khác nhau thế nào?',
+      title: 'Nên mua vàng SJC hay vàng nhẫn 9999 để tích trữ?',
       paragraphs: [
         'Vàng nhẫn 9999 và vàng miếng SJC đều có hàm lượng vàng cao nhưng khác nhau về hình thức, thương hiệu, mức chênh lệch mua bán và cách thị trường định giá.',
-        'Khi lựa chọn, người mua nên so sánh giá hiện tại, spread, mục tiêu nắm giữ và khả năng thanh khoản của từng loại.',
+        'Vàng nhẫn 9999 thường phù hợp với người ưu tiên tích trữ và muốn theo dõi spread, trong khi vàng SJC có lợi thế về thương hiệu và mức độ nhận diện. Lựa chọn phù hợp còn phụ thuộc vào giá mua bán tại thời điểm giao dịch, thanh khoản và mục tiêu nắm giữ.',
       ],
     },
 
